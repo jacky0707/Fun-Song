@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Fun Song 一下"
 theme = "hugo-theme-cactus-plus-master"
 hasCJKLanguage = true
+publishDir = "docs"
 
 [params]
 	author = "嵩傑"
