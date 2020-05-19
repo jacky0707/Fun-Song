@@ -41,7 +41,7 @@ hasCJKLanguage = true
 	home = "首頁"
 	about = "關於"
 	archive = "文章"
-	tags = "標籤"
+	tags = "分類"
     subscribe = "訂閱"
 
 	olderPosts = ""
