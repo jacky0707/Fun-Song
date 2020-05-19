@@ -14,7 +14,7 @@ publishDir = "docs"
 	enableToc = true
 
 	enableDisqus = true
-	disqusShortname = "your_disqus_short_name"
+	disqusShortname = "fun-song"
 
 
 	enableSummary = true
