@@ -1,15 +1,42 @@
 +++
 date = "2020-05-18T21:27:37+08:00"
-title = "About"
+title = "關於我"
 hidden = true
 +++
+### 介紹
+小時候其實很聰明，沒唸書也能在班上拿前三名，覺得學習好像不怎麼重要，於是隨著年齡增長，被努力的人們一步步地超過、海放。
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa ullam earum dolorum! Sed, perspiciatis.
+到了大學，期末名次幾乎等於班上人數了，我卻也覺得沒關係，反正在校成績好似乎也沒什麼好處(一路上都是考生，沒推甄過)。不在意成績導致不在意學習，就這樣混混玩玩當了兩年的墊腳石。
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+大三那年，被朋友找去做專題。不做還好，一做不得了，寫起不曾學過的 code，讀起不曾看過的 document，這就是我要的學習，這就是我要的成長，這就是我要的成就感。所學不再是為了考試為了成績，而是為了成果。<br />看著 run 起來的程式碼，一步步完成的 App，以及獲得系上第三名的專題成果，我知道，這就是我要的。
 
-***
+一頭跳進 coding world 之後，又接了兩份校內獎助型計畫，寫 code 還有錢拿對浪子來說真的是太美好了。面臨出社會在即，我深知自己已經錯失太多光陰，於是用各種方式尋找可以增進就業實力的機會。最後有幸進入了 AppWorks School。
 
-### Lorem ipsum dolor.
+在 AppWorks School，第一次身邊有這麼多出了社會的人士，每個人看起來的歷練都比我這又屁又菜的新社畜強上太多，而且原本早九晚六的訓練營被大家自主學習成早九晚九...「當你休息的時候，別人還在奔跑，所以記得，先把他們絆倒」，問題是我沒這麼多隻腳啊!! 於是我找回了被我遺忘已久的努力，也是在這裡，我經歷了有架構、有規劃的工程師訓練。
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea dicta corporis ad inventore itaque impedit dolor atque amet exercitationem! Veniam qui voluptas maiores vel laudantium necessitatibus, velit ducimus! Iste hic facere, accusamus fugiat enim facilis.
+### 興趣
+1. 陽光系列
+* 籃球
+* 羽球
+* 桌球
+* 慢跑
+
+2. 肥宅系列
+* LoL
+* 神魔之塔
+* ARK
+* 看 YouTube 一整天
+
+
+### 歷史車站
+* Aloha Group Limited
+* 富邦人壽
+* AppWorks School
+* 中央通訊工程系
+* 大直高中數資班
+* 延平國中
+* 建安國小
+
+### 喜歡的話
+* 選你所愛，愛你所選。
+* 你不需要很厲害才能開始，但你需要開始才可以很厲害。
