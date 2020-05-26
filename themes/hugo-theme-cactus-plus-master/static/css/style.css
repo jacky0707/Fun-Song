@@ -465,6 +465,9 @@ img {
     max-width: 100%;
     border-radius: 3px;
 }
+img[src*="#width250"]{
+    width:250px
+}
 
 
 /* Made with Cactus Badge */
