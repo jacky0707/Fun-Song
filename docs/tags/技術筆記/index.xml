@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>技術筆記 on Fun Song 一下</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</link>
+    <description>Recent content in 技術筆記 on Fun Song 一下</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 26 May 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jacky0707.github.io/Fun-Song/tags/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SVG 入門筆記</title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
+      <description>緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我</description>
+    </item>
+    
+  </channel>
+</rss>

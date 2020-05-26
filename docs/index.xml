@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>SVG 入門筆記</title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
+      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
+      <description>緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我</description>
+    </item>
+    
+    <item>
       <title>index</title>
       <link>https://jacky0707.github.io/Fun-Song/tags/</link>
       <pubDate>Tue, 19 May 2020 12:01:00 +0800</pubDate>
