@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Fun Song 一下</title>
-    <link>https://jacky0707.github.io/Fun-Song/posts/</link>
-    <description>Recent content in Posts on Fun Song 一下</description>
+    <title>嘉義 on Fun Song 一下</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/%E5%98%89%E7%BE%A9/</link>
+    <description>Recent content in 嘉義 on Fun Song 一下</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://jacky0707.github.io/Fun-Song/posts/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://jacky0707.github.io/Fun-Song/tags/%E5%98%89%E7%BE%A9/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
@@ -27,15 +27,6 @@
       
       <guid>https://jacky0707.github.io/Fun-Song/posts/20200626/</guid>
       <description>起心動念 前一次出去玩過夜是 2019 年 10 月了，這次趁著連假+離職前剩下的特休(後來發現並沒有剩下，因此還被扣了一堆薪水ㄏㄏ)，決定出一趟門。東部跟嘉</description>
-    </item>
-    
-    <item>
-      <title>SVG 入門筆記</title>
-      <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
-      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
-      <description>緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我</description>
     </item>
     
   </channel>
