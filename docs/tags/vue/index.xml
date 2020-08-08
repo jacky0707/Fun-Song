@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue on Fun Song 一下</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/vue/</link>
+    <description>Recent content in Vue on Fun Song 一下</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://jacky0707.github.io/Fun-Song/tags/vue/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>NUXT 入門筆記</title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200723/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200723/</guid>
+      <description>緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。 但 7/1 才進新公司， Typ</description>
+    </item>
+    
+  </channel>
+</rss>

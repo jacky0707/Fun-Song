@@ -6,10 +6,19 @@
     <description>Recent content in Posts on Fun Song 一下</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jun 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://jacky0707.github.io/Fun-Song/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>NUXT 入門筆記</title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200723/</link>
+      <pubDate>Thu, 23 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200723/</guid>
+      <description>緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。 但 7/1 才進新公司， Typ</description>
+    </item>
     
     <item>
       <title>端午嘉義行 day 2</title>
@@ -36,6 +45,24 @@
       
       <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
       <description>緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200803/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200803/</guid>
+      <description>Vue.js前端開發工程師 你使用過的 vue library 介紹一下 vuex vue router navigator guard async/await 為了解決 promise 什麼 &amp;amp; 各自解釋 怎麼優化 build 出來的靜態檔案 跨域資源請求</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://jacky0707.github.io/Fun-Song/posts/20200804/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jacky0707.github.io/Fun-Song/posts/20200804/</guid>
+      <description>內湖菠菜 HR 性向測驗 css div 內東西的水平垂直置中 IE 的話呢 行內元素跟區塊元素 如果設置行內元素寬度，該元素寬度為和 請簡單敘述一下 vuex 有優化過網站嗎 png jpg 兩</description>
     </item>
     
   </channel>
