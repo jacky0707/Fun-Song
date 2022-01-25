@@ -1,12 +1,14 @@
-baseURL = "http://example.org/"
+baseURL = "https://jacky0707.github.io/Fun-Song/"
 # [en, zh-cn, fr, ...] determines default content language
 defaultContentLanguage = "en"
 # language code
 languageCode = "en"
-title = "My New Hugo Site"
-
+title = "Fun Song"
 # Change the default theme to be use when building the site with Hugo
 theme = "LoveIt"
+
+publishDir="docs"
+canonifyurls = true
 
 [params]
   # LoveIt theme version
