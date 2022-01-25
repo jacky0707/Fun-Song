@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>工程師 Hugo 入門 - Fun Song</title><meta name="Description" content="Hugo tutorial"><meta property="og:title" content="工程師 Hugo 入門" />
+        <title>Hugo 筆記 - Fun Song</title><meta name="Description" content="Hugo tutorial"><meta property="og:title" content="Hugo 筆記" />
 <meta property="og:description" content="Hugo tutorial" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20220124/" /><meta property="article:section" content="posts" />
@@ -13,7 +13,7 @@
 <meta property="article:modified_time" content="2022-01-24T00:00:00+00:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="工程師 Hugo 入門"/>
+<meta name="twitter:title" content="Hugo 筆記"/>
 <meta name="twitter:description" content="Hugo tutorial"/>
 <meta name="application-name" content="Fun Song">
 <meta name="apple-mobile-web-app-title" content="Fun Song"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
@@ -22,12 +22,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "工程師 Hugo 入門",
+        "headline": "Hugo 筆記",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220124\/"
-        },"genre": "posts","keywords": "hugo, 部落格","wordcount":  164 ,
+        },"genre": "posts","keywords": "Hugo, 部落格","wordcount":  238 ,
         "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220124\/","datePublished": "2022-01-24T00:00:00+00:00","dateModified": "2022-01-24T00:00:00+00:00","publisher": {
             "@type": "Organization",
             "name": "邱嵩傑"},"author": {
@@ -75,10 +75,10 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animated flipInX">工程師 Hugo 入門</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animated flipInX">Hugo 筆記</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw"></i>技術筆記</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-24">2022-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;164 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-01-24">2022-01-24</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;238 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -94,13 +94,14 @@
         <li><a href="#安頓-hugo">安頓 Hugo</a></li>
         <li><a href="#建立-hugo-專案">建立 Hugo 專案</a></li>
         <li><a href="#使用-hugo-theme">使用 Hugo Theme</a></li>
-        <li><a href="#在-local-執行與-build">在 local 執行與 Build</a></li>
+        <li><a href="#run-hugo-and-build">run hugo and build</a></li>
+        <li><a href="#使用-github-page-host-網站">使用 Github Page Host 網站</a></li>
       </ul>
     </li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h3 id="舊筆重提">舊筆重提</h3>
-<p>因為懶，所以我一年半沒寫文章了。</p>
+<p>因為懶，所以我一年半沒寫文章了。趁著這次決定要回來經營部落格，紀錄一下當初學 Hugo 的一些重點。</p>
 <h3 id="近況更新">近況更新</h3>
 <p>半年前換了第三份工作，三個月前買了預售屋，上個月去醫院檢查發現眼球脫皮，剛領了年終，下周春節，妹子目前待業，最常在家裡看肥波看劇跟放屁(偶爾一起寫 side project)。</p>
 <p><img
@@ -224,9 +225,20 @@
         data-sizes="auto"
         alt="/images/20220124/011.png"
         title="config.toml" /></p>
-<h3 id="在-local-執行與-build">在 local 執行與 Build</h3>
+<h3 id="run-hugo-and-build">run hugo and build</h3>
 <p>現在我們可以在專案資料夾的路徑下，執行 <code>hugo server</code> 來看看自己目前 Hugo 網站的樣貌。</p>
 <p>當想要打包專案來進行部屬時，可以使用 <code>hugo</code> 來進行打包，這個指令會生成一個 <code>public</code> 資料夾，裡面的檔案就可以拿來部屬靜態網站了。</p>
+<h3 id="使用-github-page-host-網站">使用 Github Page Host 網站</h3>
+<p>老實說這部分沒有花足夠的時間去研究，這邊就簡單紀錄自己的做法:</p>
+<ol>
+<li>將原始的 code 留在 <code>dev</code> branch 上。</li>
+<li>修改 config.toml 內容(包含 <code>baseURL</code>, <code>publishDir</code> 改成 docs, <code>canonifyurls</code> 設成 true) 。</li>
+<li>執行 <code>hugo</code> 把靜態網站在 <code>docs</code> 路徑下 build 出來。</li>
+<li>commit change。</li>
+<li>checkout 到 <code>main</code> branch，然後執行 <code>git checkout dev docs/</code> 把 dev branch 的 docs 資料夾整包拉到 main branch。</li>
+<li>把 <code>main</code> branch push 到 github，在 github 設定 github page，讓他 host main branch 中的 docs 資料夾。</li>
+</ol>
+<p>這樣就可以在 github 提供的 github page 連結看到自己的 Hugo 網站了。</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -244,7 +256,7 @@
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/hugo/">hugo</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/">部落格</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/hugo/">Hugo</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/">部落格</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
         </section>
