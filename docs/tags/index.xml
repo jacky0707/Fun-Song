@@ -1,0 +1,77 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/</link>
+        <description>Tags - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>hugo</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/hugo/</link>
+    <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/hugo/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>部落格</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
+    <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Front end</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/front-end/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/front-end/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>React</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/react/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/react/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>typescript</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/typescript/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/typescript/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>webpack</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/webpack/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/webpack/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>GraphQL</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/graphql/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/graphql/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Nuxt</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/nuxt/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/nuxt/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Vue</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/vue/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/vue/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>六月遊</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</link>
+    <pubDate>Sat, 27 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
