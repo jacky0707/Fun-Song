@@ -1,0 +1,77 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Fun Song</title>
+        <link>http://example.org/tags/</link>
+        <description>Tags - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>hugo</title>
+    <link>http://example.org/tags/hugo/</link>
+    <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/hugo/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>部落格</title>
+    <link>http://example.org/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/</link>
+    <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/%E9%83%A8%E8%90%BD%E6%A0%BC/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Front end</title>
+    <link>http://example.org/tags/front-end/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/front-end/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>React</title>
+    <link>http://example.org/tags/react/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/react/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>typescript</title>
+    <link>http://example.org/tags/typescript/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/typescript/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>webpack</title>
+    <link>http://example.org/tags/webpack/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/webpack/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>GraphQL</title>
+    <link>http://example.org/tags/graphql/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/graphql/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Nuxt</title>
+    <link>http://example.org/tags/nuxt/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/nuxt/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Vue</title>
+    <link>http://example.org/tags/vue/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/vue/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>六月遊</title>
+    <link>http://example.org/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</link>
+    <pubDate>Sat, 27 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://example.org/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
