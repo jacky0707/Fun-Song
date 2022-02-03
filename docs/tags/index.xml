@@ -3,7 +3,21 @@
         <title>Tags - Tag - Fun Song</title>
         <link>https://jacky0707.github.io/Fun-Song/tags/</link>
         <description>Tags - Tag - Fun Song</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Golang</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/golang/</link>
+    <pubDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/golang/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>WebSocket</title>
+    <link>https://jacky0707.github.io/Fun-Song/tags/websocket/</link>
+    <pubDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/tags/websocket/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
     <title>Hugo</title>
     <link>https://jacky0707.github.io/Fun-Song/tags/hugo/</link>
     <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
@@ -32,7 +46,7 @@
     <guid>https://jacky0707.github.io/Fun-Song/tags/react/</guid>
     <description><![CDATA[]]></description>
 </item><item>
-    <title>typescript</title>
+    <title>TypeScript</title>
     <link>https://jacky0707.github.io/Fun-Song/tags/typescript/</link>
     <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
@@ -58,20 +72,6 @@
     <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
     <author>Author</author>
     <guid>https://jacky0707.github.io/Fun-Song/tags/nuxt/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>Vue</title>
-    <link>https://jacky0707.github.io/Fun-Song/tags/vue/</link>
-    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://jacky0707.github.io/Fun-Song/tags/vue/</guid>
-    <description><![CDATA[]]></description>
-</item><item>
-    <title>六月遊</title>
-    <link>https://jacky0707.github.io/Fun-Song/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</link>
-    <pubDate>Sat, 27 Jun 2020 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
-    <guid>https://jacky0707.github.io/Fun-Song/tags/%E5%85%AD%E6%9C%88%E9%81%8A/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

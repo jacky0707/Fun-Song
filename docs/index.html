@@ -63,6 +63,21 @@
 <main class="main">
                 <div class="container"><div class="page home" posts><div class="home-profile"></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
+        <a href="https://jacky0707.github.io/Fun-Song/posts/20220203/">Chat system with Golang</a>
+    </h1><div class="post-meta"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>邱嵩傑</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-02-03">2022-02-03</time></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw"></i>技術筆記</a></span></div><div class="content">前言 年前接了一個重構聊天系統到網頁上的任務。
+現有的前端由於不是使用網頁，所以舊的 code 沒什麼參考價值。
+後端的部分先前開發的 RD 已經不在公司了 orz，交接來的 RD 說花時間看舊的 code 不如寫一個新的，但他要忙別的專案沒空弄新的給我接。
+Alright，後端說要寫新的，但他沒時間弄。我自己沒學過 golang，但我有的是時間，那麼身為 golang 新手，如果要弄出一個後端，邊學邊寫新的應該比直接看懂舊的來的簡單(吧?
+就使用 gorilla 的 Websocket package 吧!
+於是我風塵僕僕的踏進了 golang，初識了 goroutine &amp; Channel ，並且學會一些打印出 golang 中各種資料型態的方法(相較於 js &amp; ts，golang 這個強型態語言要從 0 開始直接理解現有的專案程式碼實在不是很容易&hellip;)。最後總算是看懂了 document 給的 example，並且延伸出了私人訊息的功能。
+完成了這一切後跟老闆報告進度，老闆表示: 用舊的後端吧，現有的功能其實不只聊天，要讓我重新理解並完整重構&hellip;&hellip;有點&hellip;&hellip;。
+well，老闆說的有理，改進比改革省時多了，而且歷經一個月的歷練，理解現有的 code 應該不再那麼難了。
+但為了不要讓這曾經的努力漸漸淡忘在腦海中，還是將經歷過的紀錄下來吧!
+Good to know first  channel type make function select for channel Method/Function Receiver  gorilla example code 目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。
+main.go 首先從程式 entry point 開始看起。</div><div class="post-footer">
+        <a href="https://jacky0707.github.io/Fun-Song/posts/20220203/">Read More</a><div class="post-tags">
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/golang/">Golang</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/websocket/">WebSocket</a></div></div>
+</article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://jacky0707.github.io/Fun-Song/posts/20220124/">Hugo 筆記</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>邱嵩傑</a></span>&nbsp;<span class="post-publish">published on <time datetime="2022-01-24">2022-01-24</time></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw"></i>技術筆記</a></span></div><div class="content">舊筆重提 因為懶，所以我一年半沒寫文章了。趁著這次決定要回來經營部落格，紀錄一下當初學 Hugo 的一些重點。
 近況更新 半年前換了第三份工作，三個月前買了預售屋，上個月去醫院檢查發現眼球脫皮，剛領了年終，下周春節，妹子目前待業，最常在家裡看肥波看劇跟放屁(偶爾一起寫 side project)。
@@ -91,7 +106,7 @@ npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react在與 
 What is webpack?
 npm install webpack webpack-cli webpack-dev-servernpm install babel-loader css-loader style-loader source-map-loadernpm install html-webpack-plugin mini-css-extract-plugin webpack-node-externals在與 package.</div><div class="post-footer">
         <a href="https://jacky0707.github.io/Fun-Song/posts/20210320/">Read More</a><div class="post-tags">
-                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/react/">React</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/typescript/">typescript</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/webpack/">webpack</a></div></div>
+                <i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/react/">React</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/typescript/">TypeScript</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/webpack/">webpack</a></div></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="https://jacky0707.github.io/Fun-Song/posts/20200723/">NUXT 入門筆記</a>
     </h1><div class="post-meta"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>邱嵩傑</a></span>&nbsp;<span class="post-publish">published on <time datetime="2020-07-23">2020-07-23</time></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw"></i>技術筆記</a></span></div><div class="content">緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。
