@@ -3,7 +3,22 @@
         <title>React - Tag - Fun Song</title>
         <link>https://jacky0707.github.io/Fun-Song/tags/react/</link>
         <description>React - Tag - Fun Song</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/react/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 04 Jun 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/react/" rel="self" type="application/rss+xml" /><item>
+    <title>React Three Fiber 入門歷程</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20220604/</link>
+    <pubDate>Sat, 04 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20220604/</guid>
+    <description><![CDATA[前言 React-three-fiber 官網:
+ react-three-fiber is a React renderer for threejs.
+ React 官網:
+ Renderers manage how a React tree turns into the underlying platform calls.
+ 最初是因為當時 VR 跟元宇宙的話題正熱的飛起，所以想說來找找有沒有類似 3D 世界的東西來玩玩看。而 react-three-fiber 以及裡面的 live-demo 就這樣映入我的眼簾。
+簡單的 hooks 的使用以及不難理解的 jsx 語法就能打造出這樣的 3D 場景，這個東西很快地就吸引了我。
+React-three-fiber 官網建議對 React 以及 Three.js 有一定基礎的認識。 React 的部分 hooks 尤其重要，Three.js 的部分建議至少有些 basic grasp，並且看過上面提到的 live-demo。
+我個人 React 是熟悉的，但 Three.js 的部分則是一股腦地衝進去後撞得頭破血流再開始一點一點的補坑&hellip;&hellip;
+react-three-fiber 生態系 3D 網頁的專案跟以往做的網頁比起來多了不少新的概念， react-three-fiber 也列出了一個 Ecosystem 來讓我們可以輕鬆地找到適當的工具。在稍微瀏覽過這些的文件後，決定簡單使用下列:]]></description>
+</item><item>
     <title>React SSR 專案建置</title>
     <link>https://jacky0707.github.io/Fun-Song/posts/20210320/</link>
     <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>

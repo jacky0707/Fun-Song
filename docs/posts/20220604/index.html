@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>React Three Fiber 入門歷程 - Fun Song</title><meta name="Description" content="3D world with react"><meta property="og:title" content="React Three Fiber 入門歷程" />
+<meta property="og:description" content="3D world with react" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20220604/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-06-04T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-06-04T00:00:00+00:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React Three Fiber 入門歷程"/>
+<meta name="twitter:description" content="3D world with react"/>
+<meta name="application-name" content="Fun Song">
+<meta name="apple-mobile-web-app-title" content="Fun Song"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jacky0707.github.io/Fun-Song/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://jacky0707.github.io/Fun-Song/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://jacky0707.github.io/Fun-Song/apple-touch-icon.png"><link rel="manifest" href="https://jacky0707.github.io/Fun-Song/site.webmanifest"><link rel="canonical" href="https://jacky0707.github.io/Fun-Song/posts/20220604/" /><link rel="prev" href="https://jacky0707.github.io/Fun-Song/posts/20220203/" /><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/lib/normalize/normalize.min.css"><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/css/style.min.css"><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "React Three Fiber 入門歷程",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220604\/"
+        },"genre": "posts","keywords": "React, Three.js, react-three-fiber, Front End, Side Project","wordcount":  840 ,
+        "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220604\/","datePublished": "2022-06-04T00:00:00+00:00","dateModified": "2022-06-04T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "邱嵩傑"},"author": {
+                "@type": "Person",
+                "name": "邱嵩傑"
+            },"description": "3D world with react"
+    }
+    </script></head>
+    <body header-desktop="" header-mobile=""><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : '' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">Fun Song</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/"> Posts </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/"> Tags </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">Fun Song</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/" title="">Posts</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/" title="">Tags</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">React Three Fiber 入門歷程</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw"></i>技術筆記</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2022-06-04">2022-06-04</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;840 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#react-three-fiber-生態系">react-three-fiber 生態系</a></li>
+    <li><a href="#目標--預期實現方式">目標 &amp; 預期實現方式</a></li>
+    <li><a href="#建立一個-3d-世界">建立一個 3D 世界</a></li>
+    <li><a href="#使用滑鼠控制視角">使用滑鼠控制視角</a></li>
+    <li><a href="#前後左右自由行走">前後左右自由行走</a></li>
+    <li><a href="#結語">結語</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>React-three-fiber 官網:</p>
+<blockquote>
+<p>react-three-fiber is a React renderer for threejs.</p>
+</blockquote>
+<p>React 官網:</p>
+<blockquote>
+<p>Renderers manage how a React tree turns into the underlying platform calls.</p>
+</blockquote>
+<p>最初是因為當時 VR 跟元宇宙的話題正熱的飛起，所以想說來找找有沒有類似 3D 世界的東西來玩玩看。而 <a href="https://github.com/pmndrs/react-three-fiber" target="_blank" rel="noopener noreffer">react-three-fiber</a> 以及裡面的 <a href="https://codesandbox.io/s/rrppl0y8l4?file=/src/App.js" target="_blank" rel="noopener noreffer">live-demo</a> 就這樣映入我的眼簾。</p>
+<p>簡單的 hooks 的使用以及不難理解的 jsx 語法就能打造出這樣的 3D 場景，這個東西很快地就吸引了我。</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://jacky0707.github.io/Fun-Song/images/20220605/001.PNG"
+        data-srcset="https://jacky0707.github.io/Fun-Song/images/20220605/001.PNG, https://jacky0707.github.io/Fun-Song/images/20220605/001.PNG 1.5x, https://jacky0707.github.io/Fun-Song/images/20220605/001.PNG 2x"
+        data-sizes="auto"
+        alt="/images/20220605/001.PNG"
+        title="demo" /></p>
+<p>React-three-fiber 官網建議對 React 以及 Three.js 有一定基礎的認識。 React 的部分 hooks 尤其重要，Three.js 的部分建議至少有些 <a href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene" target="_blank" rel="noopener noreffer">basic grasp</a>，並且看過上面提到的 <a href="https://codesandbox.io/s/rrppl0y8l4?file=/src/App.js" target="_blank" rel="noopener noreffer">live-demo</a>。</p>
+<p>我個人 React 是熟悉的，但 Three.js 的部分則是一股腦地衝進去後撞得頭破血流再開始一點一點的補坑&hellip;&hellip;</p>
+<h2 id="react-three-fiber-生態系">react-three-fiber 生態系</h2>
+<p>3D 網頁的專案跟以往做的網頁比起來多了不少新的概念， react-three-fiber 也列出了一個 <a href="https://github.com/pmndrs/react-three-fiber#ecosystem" target="_blank" rel="noopener noreffer">Ecosystem</a> 來讓我們可以輕鬆地找到適當的工具。在稍微瀏覽過這些的文件後，決定簡單使用下列:</p>
+<ol>
+<li><a href="https://github.com/pmndrs/drei" target="_blank" rel="noopener noreffer">@react-three/drei</a> – useful helpers for react-three-fiber</li>
+<li><a href="https://github.com/pmndrs/use-cannon/tree/master/packages/react-three-cannon" target="_blank" rel="noopener noreffer">@react-three/cannon</a> – useful helpers for react-three-fiber</li>
+<li><a href="https://github.com/pmndrs/zustand" target="_blank" rel="noopener noreffer">zustand</a> – state management</li>
+</ol>
+<p>zustand 的部分比較有趣，以往我都是使用 redux 來做狀態管理，但這次剛好有機會認識這個正在崛起的狀態管理庫，學習新東西擇日不如狀日，直接入坑一波~</p>
+<h2 id="目標--預期實現方式">目標 &amp; 預期實現方式</h2>
+<ul>
+<li>讓使用者宛如置身一個 3D 世界
+<ul>
+<li>建立一個 3D scene，包含天空、地板、光線、光源。 &mdash; <strong>react-three/fiber 建立場景</strong>。</li>
+<li>應有基本物理，碰撞、重力等等。 &mdash; <strong>react-three/cannon</strong>。</li>
+<li>3D 世界中簡單的平面、方形、圓形物體。 &mdash; <strong>react-three/cannon <code>usePlane</code>, <code>useBox</code>, <code>useSphere</code></strong>。</li>
+</ul>
+</li>
+<li>可以在裡面仰頭、俯首。
+<ul>
+<li>預期用滑鼠控制視角。 &mdash; <strong>react-three/drei 的 pointerlock control</strong>。</li>
+</ul>
+</li>
+<li>可以前後左右自由行走。
+<ul>
+<li>預期用鍵盤按鍵控制自身移動方向。 &mdash; <strong>react-three/connon 建立本體實例，再使用 event listener 去控制實例</strong>。</li>
+</ul>
+</li>
+</ul>
+<h2 id="建立一個-3d-世界">建立一個 3D 世界</h2>
+<p>使用 react-three/fiber 的 Canvas 來建立 3D 場景。參考 <a href="https://docs.pmnd.rs/react-three-fiber/api/canvas" target="_blank" rel="noopener noreffer">Canvas</a>。</p>
+<ul>
+<li><code>Canvas</code> 為定義整個 3D 場景的物件</li>
+<li><code>Sky</code> 天空物件</li>
+<li><code>ambientLight</code> 為環境光源</li>
+<li><code>pointLight</code> 為點光源，可以想像成太陽</li>
+<li><code>Physics</code> 是 react-three/cannon 提供的物理系統</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">Canvas</span>
+  <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;canvas&#34;</span>
+  <span class="nx">raycaster</span><span class="o">=</span><span class="p">{{</span>
+    <span class="c1">// 設定 offset，畫面大小變化時滑鼠可以讓滑鼠位置水平垂直置中
+</span><span class="c1"></span>    <span class="nx">computeOffsets</span><span class="o">:</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="p">{</span> <span class="nx">size</span><span class="o">:</span> <span class="p">{</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span> <span class="p">}</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">offsetX</span><span class="o">:</span> <span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">offsetY</span><span class="o">:</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="p">};</span>
+    <span class="p">},</span>
+  <span class="p">}}</span>
+<span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Sky</span> <span class="nx">distance</span><span class="o">=</span><span class="p">{</span><span class="mi">450000</span><span class="p">}</span> <span class="nx">sunPosition</span><span class="o">=</span><span class="p">{</span><span class="k">new</span> <span class="nx">Vector3</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">ambientLight</span> <span class="nx">intensity</span><span class="o">=</span><span class="p">{</span><span class="mi">1</span><span class="p">}</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">pointLight</span> <span class="nx">castShadow</span> <span class="nx">intensity</span><span class="o">=</span><span class="p">{</span><span class="mf">0.5</span><span class="p">}</span> <span class="nx">position</span><span class="o">=</span><span class="p">{(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">)}</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">Physics</span> <span class="nx">gravity</span><span class="o">=</span><span class="p">{[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Ground</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="err">/Physics&gt;</span>
+<span class="o">&lt;</span><span class="err">/Canvas&gt;</span>
+</code></pre></div><p>Ground Component 程式碼。參考 <a href="https://docs.pmnd.rs/react-three-fiber/tutorials/loading-textures" target="_blank" rel="noopener noreffer">Loading texture</a>。</p>
+<ul>
+<li><code>usePlane</code> 是 react-three/cannon 提供的其中一種 hooks ，可以在 <code>Canvas</code> 內新增一個平面，而解構出來的 <code>ref</code> 以及 <code>api</code> 則提供屬性以及函數來讓我們使用。</li>
+<li><code>useLoader</code> 是 react-three/drei 提供的 helper，幫助我們更簡易的套用我們希望使用的 texture。</li>
+<li><code>mesh</code> 是 react-three/fiber 中常見綁定 <code>ref</code> 以及給予樣式的方式，參考 <a href="https://threejs.org/docs/#api/en/objects/Mesh" target="_blank" rel="noopener noreffer">mesh</a> 給予適當的 <code>geometry</code> 跟 <code>material</code> 就能夠調整 mesh 的樣式。</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">Ground</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">ref</span><span class="p">,</span> <span class="nx">api</span><span class="p">]</span> <span class="o">=</span> <span class="nx">usePlane</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">rotation</span><span class="o">:</span> <span class="p">[</span><span class="o">-</span><span class="nb">Math</span><span class="p">.</span><span class="nx">PI</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+    <span class="p">...</span><span class="nx">props</span><span class="p">,</span>
+  <span class="p">}));</span>
+
+  <span class="kr">const</span> <span class="nx">texture</span> <span class="o">=</span> <span class="nx">useLoader</span><span class="p">(</span><span class="nx">THREE</span><span class="p">.</span><span class="nx">TextureLoader</span><span class="p">,</span> <span class="s2">&#34;/ground.jpg&#34;</span><span class="p">);</span>
+  <span class="nx">texture</span><span class="p">.</span><span class="nx">wrapS</span> <span class="o">=</span> <span class="nx">texture</span><span class="p">.</span><span class="nx">wrapT</span> <span class="o">=</span> <span class="nx">THREE</span><span class="p">.</span><span class="nx">RepeatWrapping</span><span class="p">;</span>
+  <span class="nx">texture</span><span class="p">.</span><span class="nx">repeat</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">4500</span><span class="p">,</span> <span class="mi">4500</span><span class="p">);</span>
+
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">mesh</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="nx">receiveShadow</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="nx">planeBufferGeometry</span> <span class="nx">attach</span><span class="o">=</span><span class="s2">&#34;geometry&#34;</span> <span class="nx">args</span><span class="o">=</span><span class="p">{[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">1000</span><span class="p">]}</span> <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="nx">meshStandardMaterial</span> <span class="nx">map</span><span class="o">=</span><span class="p">{</span><span class="nx">texture</span><span class="p">}</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="err">/mesh&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><h2 id="使用滑鼠控制視角">使用滑鼠控制視角</h2>
+<p>參考<a href="https://github.com/pmndrs/drei/blob/master/src/core/PointerLockControls.tsx" target="_blank" rel="noopener noreffer">drei 原始碼</a>，<a href="https://threejs.org/examples/#misc_controls_pointerlock" target="_blank" rel="noopener noreffer">滑鼠控制視角例子</a>，基於這兩個例子，我希望我的 pointerLock control 可以多一個用來解除 lock status 的 state，這有利於我 side project 的開發，因此我將原始碼稍做了修改</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">PointerLockControls</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">forwardRef</span><span class="p">(()</span> <span class="p">=&gt;</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span> <span class="nx">camera</span><span class="p">,</span> <span class="nx">lockState</span><span class="p">,</span> <span class="p">...</span><span class="nx">rest</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+    <span class="c1">// ...
+</span><span class="c1"></span>
+    <span class="nx">React</span><span class="p">.</span><span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">lockState</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">controls</span><span class="p">.</span><span class="nx">unlock</span><span class="p">();</span>
+      <span class="p">}</span>
+    <span class="p">},</span> <span class="p">[</span><span class="nx">lockState</span><span class="p">]);</span>
+
+    <span class="c1">// ...
+</span><span class="c1"></span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">primitive</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span> <span class="nx">object</span><span class="o">=</span><span class="p">{</span><span class="nx">controls</span><span class="p">}</span> <span class="p">{...</span><span class="nx">rest</span><span class="p">}</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">);</span>
+</code></pre></div><p>將修改過的 <code>PointerLockControls</code> 套用給 <code>User</code>。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">{</span> <span class="nx">lockState</span><span class="p">,</span> <span class="nx">setLockState</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">props</span><span class="p">;</span>
+
+  <span class="c1">// user Sphere
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="p">{</span> <span class="nx">camera</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">useThree</span><span class="p">();</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">ref</span><span class="p">,</span> <span class="nx">api</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useSphere</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">({</span>
+    <span class="nx">mass</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nx">type</span><span class="o">:</span> <span class="s2">&#34;Dynamic&#34;</span><span class="p">,</span>
+    <span class="nx">position</span><span class="o">:</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+  <span class="p">}));</span>
+
+  <span class="c1">// ...
+</span><span class="c1"></span>
+  <span class="k">return</span> <span class="p">(</span>
+    <span class="o">&lt;&gt;</span>
+      <span class="o">&lt;</span><span class="nx">mesh</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">PointerLockControls</span>
+          <span class="nx">lockState</span><span class="o">=</span><span class="p">{</span><span class="nx">lockState</span><span class="p">}</span>
+          <span class="nx">onLock</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setLockState</span><span class="p">(</span><span class="kc">true</span><span class="p">)}</span>
+          <span class="nx">onUnlock</span><span class="o">=</span><span class="p">{()</span> <span class="p">=&gt;</span> <span class="nx">setLockState</span><span class="p">(</span><span class="kc">false</span><span class="p">)}</span>
+          <span class="nx">selector</span><span class="o">=</span><span class="s2">&#34;#canvas&#34;</span>
+        <span class="o">/&gt;</span>
+      <span class="o">&lt;</span><span class="err">/mesh&gt;</span>
+    <span class="o">&lt;</span><span class="err">/&gt;</span>
+  <span class="p">);</span>
+<span class="p">};</span>
+</code></pre></div><p>將 <code>User</code> 加入到 <code>Canvas</code> 場景中，並且受到 cannon 的物理系統影響。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript">
+<span class="kr">const</span> <span class="p">[</span><span class="nx">lockState</span><span class="p">,</span> <span class="nx">setLockState</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!!</span><span class="nx">someStateMakesUnLock</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">setLockState</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+  <span class="p">}</span>
+<span class="p">},</span> <span class="p">[</span><span class="nx">someStateMakesUnLock</span><span class="p">])</span>
+<span class="c1">//...
+</span><span class="c1"></span><span class="o">&lt;</span><span class="nx">Canvas</span>
+  <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;canvas&#34;</span>
+  <span class="nx">raycaster</span><span class="o">=</span><span class="p">{{</span>
+    <span class="nx">computeOffsets</span><span class="o">:</span> <span class="p">(</span><span class="nx">_</span><span class="p">,</span> <span class="p">{</span> <span class="nx">size</span><span class="o">:</span> <span class="p">{</span> <span class="nx">width</span><span class="p">,</span> <span class="nx">height</span> <span class="p">}</span> <span class="p">})</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="p">{</span>
+        <span class="nx">offsetX</span><span class="o">:</span> <span class="nx">width</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="nx">offsetY</span><span class="o">:</span> <span class="nx">height</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="p">};</span>
+    <span class="p">},</span>
+  <span class="p">}}</span>
+<span class="o">&gt;</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>  <span class="o">&lt;</span><span class="nx">Physics</span> <span class="nx">gravity</span><span class="o">=</span><span class="p">{[</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">]}</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">Ground</span> <span class="o">/&gt;</span>
+    <span class="o">&lt;</span><span class="nx">User</span>
+      <span class="nx">lockState</span><span class="o">=</span><span class="p">{</span><span class="nx">lockState</span><span class="p">}</span>
+      <span class="nx">setLockState</span><span class="o">=</span><span class="p">{</span><span class="nx">setLockState</span><span class="p">}</span>
+    <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="err">/Physics&gt;</span>
+<span class="o">&lt;</span><span class="err">/Canvas&gt;</span>
+</code></pre></div><p>如此一來 <code>lockState</code> 這個 state 跟 pointerLock 的狀態將會維持一樣，同時當我們將 <code>lockState</code> 改為 false 時，可以解除 pointerLock 的狀態。</p>
+<p>現在我們算解決了視角問題。</p>
+<h2 id="前後左右自由行走">前後左右自由行走</h2>
+<p>這部分參考了 <a href="https://youtu.be/ZnXKmODEFHA?t=938" target="_blank" rel="noopener noreffer">Building JavaScript Minecraft in 1 Hour [React &amp; Three.js Tutorial]
+</a> 以及 <a href="https://youtu.be/Lc2JvBXMesY?t=704" target="_blank" rel="noopener noreffer">I made MINECRAFT using REACT
+</a>，這兩部影片用的都是稍舊版本的 react-three/fiber，因此可能會遇到一些小坑，但是基本的概念都是一樣的。</p>
+<p>首先要註冊鍵盤的 wasd 按鍵事件，這邊就參考上列影片將他們包成 hooks</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">moveFieldByKey</span> <span class="o">=</span> <span class="p">(</span><span class="nx">key</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">keys</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">KeyW</span><span class="o">:</span> <span class="s2">&#34;moveForward&#34;</span><span class="p">,</span>
+    <span class="nx">KeyS</span><span class="o">:</span> <span class="s2">&#34;moveBackward&#34;</span><span class="p">,</span>
+    <span class="nx">KeyA</span><span class="o">:</span> <span class="s2">&#34;moveLeft&#34;</span><span class="p">,</span>
+    <span class="nx">KeyD</span><span class="o">:</span> <span class="s2">&#34;moveRight&#34;</span><span class="p">,</span>
+    <span class="nx">Space</span><span class="o">:</span> <span class="s2">&#34;jump&#34;</span><span class="p">,</span>
+    <span class="nx">ShiftLeft</span><span class="o">:</span> <span class="s2">&#34;speedUp&#34;</span><span class="p">,</span>
+  <span class="p">};</span>
+  <span class="k">return</span> <span class="nx">keys</span><span class="p">[</span><span class="nx">key</span><span class="p">];</span>
+<span class="p">};</span>
+
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">useKeyboardControls</span> <span class="o">=</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="p">[</span><span class="nx">movement</span><span class="p">,</span> <span class="nx">setMovement</span><span class="p">]</span> <span class="o">=</span> <span class="nx">useState</span><span class="p">({</span>
+    <span class="nx">moveForward</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">moveBackward</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">moveLeft</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">moveRight</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">jump</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nx">speedUp</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+  <span class="p">});</span>
+
+  <span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="nx">handleKeyDown</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMovement</span><span class="p">((</span><span class="nx">m</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({</span>
+        <span class="p">...</span><span class="nx">m</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">moveFieldByKey</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">)]</span><span class="o">:</span> <span class="kc">true</span><span class="p">,</span>
+      <span class="p">}));</span>
+    <span class="p">};</span>
+
+    <span class="kr">const</span> <span class="nx">handleKeyUp</span> <span class="o">=</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nx">setMovement</span><span class="p">((</span><span class="nx">m</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">({</span>
+        <span class="p">...</span><span class="nx">m</span><span class="p">,</span>
+        <span class="p">[</span><span class="nx">moveFieldByKey</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">code</span><span class="p">)]</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">}));</span>
+    <span class="p">};</span>
+
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;keydown&#34;</span><span class="p">,</span> <span class="nx">handleKeyDown</span><span class="p">);</span>
+    <span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">&#34;keyup&#34;</span><span class="p">,</span> <span class="nx">handleKeyUp</span><span class="p">);</span>
+
+    <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&#34;keydown&#34;</span><span class="p">,</span> <span class="nx">handleKeyDown</span><span class="p">);</span>
+      <span class="nb">document</span><span class="p">.</span><span class="nx">removeEventListener</span><span class="p">(</span><span class="s2">&#34;keyup&#34;</span><span class="p">,</span> <span class="nx">handleKeyUp</span><span class="p">);</span>
+    <span class="p">};</span>
+  <span class="p">},</span> <span class="p">[]);</span>
+
+  <span class="k">return</span> <span class="nx">movement</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></div><p>接著在 <code>User</code> 中使用，並且在按下按鍵時套用速度。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">User</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="c1">// ...
+</span><span class="c1"></span>
+  <span class="c1">// get movement
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="p">{</span> <span class="nx">moveForward</span><span class="p">,</span> <span class="nx">moveBackward</span><span class="p">,</span> <span class="nx">moveLeft</span><span class="p">,</span> <span class="nx">moveRight</span><span class="p">,</span> <span class="nx">jump</span><span class="p">,</span> <span class="nx">speedUp</span> <span class="p">}</span> <span class="o">=</span>
+    <span class="nx">useKeyboardControls</span><span class="p">();</span>
+
+  <span class="c1">// initial velocity
+</span><span class="c1"></span>  <span class="kr">const</span> <span class="nx">velocity</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]);</span>
+
+  <span class="nx">useFrame</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">lockState</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// get direction
+</span><span class="c1"></span>      <span class="kr">const</span> <span class="nx">direction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector3</span><span class="p">();</span>
+      <span class="c1">// horizontal direction, z-direction
+</span><span class="c1"></span>      <span class="kr">const</span> <span class="nx">frontVector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector3</span><span class="p">(</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="nb">Number</span><span class="p">(</span><span class="nx">moveBackward</span><span class="p">)</span> <span class="o">-</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">moveForward</span><span class="p">)</span>
+      <span class="p">);</span>
+      <span class="c1">// horizontal direction, x-direction
+</span><span class="c1"></span>      <span class="kr">const</span> <span class="nx">sideVector</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector3</span><span class="p">(</span>
+        <span class="nb">Number</span><span class="p">(</span><span class="nx">moveLeft</span><span class="p">)</span> <span class="o">-</span> <span class="nb">Number</span><span class="p">(</span><span class="nx">moveRight</span><span class="p">),</span>
+        <span class="mi">0</span><span class="p">,</span>
+        <span class="mi">0</span>
+      <span class="p">);</span>
+
+      <span class="c1">// vertical, y-direction
+</span><span class="c1"></span>      <span class="kr">const</span> <span class="nx">SPEED</span> <span class="o">=</span> <span class="nx">speedUp</span> <span class="o">?</span> <span class="mi">9</span> <span class="o">:</span> <span class="mi">3</span><span class="p">;</span>
+
+      <span class="c1">// apply horizontal movement to direction
+</span><span class="c1"></span>      <span class="nx">direction</span>
+        <span class="p">.</span><span class="nx">subVectors</span><span class="p">(</span><span class="nx">frontVector</span><span class="p">,</span> <span class="nx">sideVector</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">normalize</span><span class="p">()</span>
+        <span class="p">.</span><span class="nx">multiplyScalar</span><span class="p">(</span><span class="nx">SPEED</span><span class="p">)</span>
+        <span class="p">.</span><span class="nx">applyEuler</span><span class="p">(</span><span class="nx">camera</span><span class="p">.</span><span class="nx">rotation</span><span class="p">);</span>
+
+      <span class="nx">api</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">direction</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span> <span class="nx">velocity</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">direction</span><span class="p">.</span><span class="nx">z</span><span class="p">);</span>
+
+      <span class="k">if</span> <span class="p">(</span><span class="nx">jump</span> <span class="o">&amp;&amp;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nx">toFixed</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span> <span class="o">&lt;</span> <span class="mf">0.01</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">api</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">6</span><span class="p">,</span> <span class="nx">velocity</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="mi">2</span><span class="p">]);</span>
+      <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nx">api</span><span class="p">.</span><span class="nx">velocity</span><span class="p">.</span><span class="nx">set</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nx">velocity</span><span class="p">.</span><span class="nx">current</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="mi">0</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">});</span>
+
+  <span class="c1">//...
+</span><span class="c1"></span><span class="p">};</span>
+</code></pre></div><p>最後就是將 position 這個 <code>ref</code> 去 subscribe <code>useSphere</code> 所 return 的 <code>api</code>，並且 camera 的位置也使用 <code>camera.position.copy(position.current)</code> 來跟 sphere 保持同樣位置。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">//...
+</span><span class="c1"></span>
+<span class="c1">// position ref
+</span><span class="c1"></span><span class="kr">const</span> <span class="nx">position</span> <span class="o">=</span> <span class="nx">useRef</span><span class="p">(</span><span class="k">new</span> <span class="nx">Vector3</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">));</span>
+
+<span class="nx">useEffect</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="kr">const</span> <span class="nx">unsubscribePosition</span> <span class="o">=</span> <span class="nx">api</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span>
+    <span class="p">(</span><span class="nx">pos</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">current</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Vector3</span><span class="p">(</span><span class="nx">pos</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="nx">pos</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+  <span class="p">);</span>
+  <span class="k">return</span> <span class="p">()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="nx">unsubscribePosition</span><span class="p">();</span>
+  <span class="p">};</span>
+<span class="p">},</span> <span class="p">[]);</span>
+
+<span class="nx">useFrame</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">camera</span><span class="p">.</span><span class="nx">position</span><span class="p">.</span><span class="nx">copy</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">current</span><span class="p">);</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="nx">lockState</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...
+</span><span class="c1"></span>  <span class="p">}</span>
+<span class="p">});</span>
+</code></pre></div><p>這邊有個曾經讓我卡住很久的點是， camera(我們看到的視角) 跟 sphere(我們使用 <code>useSphere</code> 做出來的球體) 本身其實是不同的東西，<code>ref</code> 跟 <code>api</code> 都是屬於 sphere 的東西。</p>
+<p>如果最後沒有使用 <code>subscribe</code> 跟 <code>camera.position.copy</code>，那麼即使 sphere 本身有套用到第二步所做的，按下按鍵改變移動速度，相機本身沒有跟隨球體移動，那我們看到的視角跟畫面都會是一樣的。</p>
+<p>這部分如果沒辦法理解的話，可以先註解掉嘗試在 User 的 mesh 中增加 <code>sphereGeometry</code>，然後取消 <code>subscribe</code> 或 <code>camera.position.copy</code>，這樣就可以體會 camera 跟球體分離的情況了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">mesh</span> <span class="nx">ref</span><span class="o">=</span><span class="p">{</span><span class="nx">ref</span><span class="p">}</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">sphereGeometry</span> <span class="o">/&gt;</span>
+  <span class="o">&lt;</span><span class="nx">PointerLockControls</span> <span class="o">/&gt;</span>
+<span class="o">&lt;</span><span class="err">/mesh&gt;</span>
+</code></pre></div><h2 id="結語">結語</h2>
+<p>第一次開發 3D 專案，真的是撞得頭破血流，但也能體會為什麼元宇宙這種東西這麼吸引人。簡單的小專案，就可以感覺到無限的可能性，可惜身邊沒有美術專家，純工程師做的 3D 場景只可能有方形、圓形、平面這種簡單到不行的模型，期待之後可以將這個 side project 發揚光大。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-06-04</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/react/">React</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/three.js/">Three.js</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/react-three-fiber/">react-three-fiber</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/side-project/">Side Project</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://jacky0707.github.io/Fun-Song/posts/20220203/" class="prev" rel="prev" title="Chat system with Golang"><i class="fas fa-angle-left fa-fw"></i>Chat system with Golang</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.92.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jacky0707.github.io/Fun-Song/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{}};</script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/js/theme.min.js"></script></body>
+</html>
