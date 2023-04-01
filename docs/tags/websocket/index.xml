@@ -7,7 +7,7 @@
     <title>Chat system with Golang</title>
     <link>https://jacky0707.github.io/Fun-Song/posts/20220203/</link>
     <pubDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</pubDate>
-    <author>Author</author>
+    <author>邱嵩傑</author>
     <guid>https://jacky0707.github.io/Fun-Song/posts/20220203/</guid>
     <description><![CDATA[前言 年前接了一個重構聊天系統到網頁上的任務。
 現有的前端由於不是使用網頁，所以舊的 code 沒什麼參考價值。
@@ -18,7 +18,8 @@ Alright，後端說要寫新的，但他沒時間弄。我自己沒學過 golang
 完成了這一切後跟老闆報告進度，老闆表示: 用舊的後端吧，現有的功能其實不只聊天，要讓我重新理解並完整重構&hellip;&hellip;有點&hellip;&hellip;。
 well，老闆說的有理，改進比改革省時多了，而且歷經一個月的歷練，理解現有的 code 應該不再那麼難了。
 但為了不要讓這曾經的努力漸漸淡忘在腦海中，還是將經歷過的紀錄下來吧!
-Good to know first  channel type make function select for channel Method/Function Receiver  gorilla example code 目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。
+Good to know first channel type make function select for channel Method/Function Receiver gorilla example code 目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。
 main.go 首先從程式 entry point 開始看起。]]></description>
-</item></channel>
+</item>
+</channel>
 </rss>
