@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>NUXT 入門筆記 - Fun Song</title><meta name="Description" content="開箱即用的 Vue with SSR"><meta property="og:title" content="NUXT 入門筆記" />
+<meta property="og:description" content="開箱即用的 Vue with SSR" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20200723/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-07-23T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-07-23T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="NUXT 入門筆記"/>
+<meta name="twitter:description" content="開箱即用的 Vue with SSR"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jacky0707.github.io/Fun-Song/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://jacky0707.github.io/Fun-Song/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://jacky0707.github.io/Fun-Song/apple-touch-icon.png"><link rel="mask-icon" href="https://jacky0707.github.io/Fun-Song/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://jacky0707.github.io/Fun-Song/site.webmanifest"><link rel="canonical" href="https://jacky0707.github.io/Fun-Song/posts/20200723/" /><link rel="prev" href="https://jacky0707.github.io/Fun-Song/posts/20200627/" /><link rel="next" href="https://jacky0707.github.io/Fun-Song/posts/20210320/" /><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "NUXT 入門筆記",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20200723\/"
+        },"genre": "posts","keywords": "Front end, Vue, Nuxt, GraphQL","wordcount":  226 ,
+        "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20200723\/","datePublished": "2020-07-23T00:00:00+00:00","dateModified": "2020-07-23T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "邱嵩傑"
+            },"description": "開箱即用的 Vue with SSR"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/"> Posts </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/"> Tags </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/" title="">Posts</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/" title="">Tags</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">NUXT 入門筆記</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技術筆記</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-07-23">2020-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;226 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#緣起">緣起</a></li>
+        <li><a href="#get-start">Get Start</a></li>
+        <li><a href="#directory-structure-layout">Directory Structure: Layout</a></li>
+        <li><a href="#directory-structure-pages">Directory Structure: Pages</a></li>
+        <li><a href="#directory-structure-store">Directory Structure: Store</a></li>
+        <li><a href="#directory-structure-components">Directory Structure: Components</a></li>
+        <li><a href="#bug-紀錄">Bug 紀錄</a></li>
+        <li><a href="#小結">小結</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="緣起">緣起</h3>
+<p>7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。</p>
+<p>但 7/1 才進新公司， <code>TypeScript</code>、<code>react</code>、<code>redux</code> 和一堆沒用過的 library ，加上 8 月決定要搬家所以要來賣一些不想帶走的家具，實在是有點過忙。趁著這個月的分享會到來(剛好分享 <code>react hook</code>)，趕稿一下。</p>
+<h3 id="get-start">Get Start</h3>
+<p>這次入門講座以完成一個小專案為目標，並由四個部分組成:</p>
+<ol>
+<li>Create project</li>
+</ol>
+<p>npx 安裝: <code>npx create-nuxt-app &lt;project-name&gt;</code>，安裝選項參考:</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.jpg#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.jpg#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.jpg#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.jpg#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.jpg#width250"
+        title="install" /></p>
+<p>官網安裝說明: <a href="https://nuxtjs.org/guide/installation" target="_blank" rel="noopener noreffer ">Nuxt install</a></p>
+<ol start="2">
+<li>Directory Structure: 會在接下來的段落一一說明。</li>
+</ol>
+<p>安裝完的目錄參考:</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.jpg#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.jpg#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.jpg#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.jpg#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.jpg#width250"
+        title="Directory Structure" /></p>
+<ol start="3">
+<li><a href="https://vuetifyjs.com/en/" target="_blank" rel="noopener noreffer ">Vuetify</a> (Optional): Vue 的 UI 框架，但與 Nuxt 沒有必需的相依關係。</li>
+<li>To be continue &mdash;</li>
+</ol>
+<h3 id="directory-structure-layout">Directory Structure: Layout</h3>
+<p>不同的 page 可以有不同的頁面布局，Side bar 的有無，Key Visaul 的呈現等等。</p>
+<p>要建立一個新的 layout ，只需要在 <code>layout</code> 資料夾中，建立一個 .vue 檔案，並且在 <code>&lt;template&gt;</code> tag 裡面設計自己喜歡的樣板，最後只要注意記得放入 <code>&lt;nuxt /&gt;</code> 來預留空間給每個 page 的內容就完成了。</p>
+<p>而在這層資料夾底下的 Error page 是一個特別的存在，當 user 輸入了一個沒有被設定到的 Url 時，nuxt 就會將 error page 給渲染出來。所以意義上來說他是一個 page，而非 layout，因此他也不能在 <code>&lt;template&gt;</code> tag 裡面放入 <code>&lt;nuxt /&gt;</code>。</p>
+<p><strong>範例:</strong></p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/layouts/default.vue" target="_blank" rel="noopener noreffer ">Default</a>: 預設的 Layout，首頁將會使用這個 layout。</p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/layouts/notHomePage.vue" target="_blank" rel="noopener noreffer ">notHomePage</a>: 非首頁部分的 Layout。</p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/layouts/error.vue" target="_blank" rel="noopener noreffer ">error</a>: error page。</p>
+<p>為了簡單的讓大家看出差別， notHomePage 與 Default Layout 的差別是: 只更改了 appbar 的顏色，並且在第 21 行多加了一個按鈕元件而已。</p>
+<h3 id="directory-structure-pages">Directory Structure: Pages</h3>
+<p>在 Pages 資料夾下的每個 .vue 檔案，都會依照檔名去建立一個對應的 url，而 <code>index.vue</code> 則是預設的首頁。例如建立一個 <code>/pages/helloworld.vue</code> 就可以使用 <code>helloworld</code> 這個 route 來看到這個 page。</p>
+<p><strong>範例:</strong></p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/pages/index.vue" target="_blank" rel="noopener noreffer ">index.vue</a>: 首頁，裡面的 <code>fetchPokemons()</code> 是用來抓取資料的 function。</p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/pages/pokemons.vue" target="_blank" rel="noopener noreffer ">pokemons</a>: 顯示抓回來的資料的頁面，可以看到在第 29 行設定了這一個 page 所要使用的 <code>layout</code>。</p>
+<h3 id="directory-structure-store">Directory Structure: Store</h3>
+<p><a href="https://vuex.vuejs.org/" target="_blank" rel="noopener noreffer ">Vuex</a> 是一個用來管理 state 的 library，要在 nuxt 中使用他，只需要在 store 底下建立一個 index.js。另外 vuex 裡的 action 也可以用來處理像是拿資料這類非同步的問題。</p>
+<p><strong>範例:</strong></p>
+<p>剛剛在 index.vue 裡面有呼叫 <code>pokemons/fetchPokemons</code>，這是個要去 endpoint 取得資料的 action。那現在就在 store 底下建立一個 <a href="https://github.com/jacky0707/nuxt-demo/blob/development/store/pokemons.js" target="_blank" rel="noopener noreffer ">pokemons</a> 來實踐他吧。</p>
+<p>備註: import 進來的 <code>GET_POKEMONS</code> 可以在 <a href="https://github.com/jacky0707/nuxt-demo/tree/development/graphql" target="_blank" rel="noopener noreffer ">/graphql</a> 底下找到。</p>
+<h3 id="directory-structure-components">Directory Structure: Components</h3>
+<p>存放 components 的資料夾，唯一要注意的是不可以在 component 內取用非同步的資料。</p>
+<p><strong>範例:</strong></p>
+<p><a href="https://github.com/jacky0707/nuxt-demo/blob/development/components/PokemonCard.vue" target="_blank" rel="noopener noreffer ">PokemonCard</a>: 顯示單隻 Pokemon 資訊的卡片，有了這個 component 就可以直接用 v-for 把拿到的 Pokemon 都用這個 component render 出來。</p>
+<h3 id="bug-紀錄">Bug 紀錄</h3>
+<p>build 專案的時候遇到了這個問題:
+<img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/001.png"
+        title="error" />
+若沒有仔細看還看不出來兩個 Path 的斜線方向不同，還以為電腦跳針硬是把一樣的說成不一樣，猜想可能是 window 環境的 bug 吧。</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200723/002.png"
+        title="error" />
+發現是某個 node module 裡的問題，找到問題就好解決了，幸好最後還能成功 deploy。</p>
+<h3 id="小結">小結</h3>
+<p>至此 nuxt 的基本使用算都提到了，其他相關的開發文件就留給需要的人去閱讀吧 xD。附上 <a href="https://jacky0707.github.io/nuxt-demo/" target="_blank" rel="noopener noreffer ">Demo</a> 連結。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-07-23</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jacky0707.github.io/Fun-Song/posts/20200723/" data-title="NUXT 入門筆記" data-hashtags="Front end,Vue,Nuxt,GraphQL"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jacky0707.github.io/Fun-Song/posts/20200723/" data-hashtag="Front end"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://jacky0707.github.io/Fun-Song/posts/20200723/" data-title="NUXT 入門筆記"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jacky0707.github.io/Fun-Song/posts/20200723/" data-title="NUXT 入門筆記"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jacky0707.github.io/Fun-Song/posts/20200723/" data-title="NUXT 入門筆記"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/vue/">Vue</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/nuxt/">Nuxt</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/graphql/">GraphQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://jacky0707.github.io/Fun-Song/posts/20200627/" class="prev" rel="prev" title="端午嘉義行 day 2"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>端午嘉義行 day 2</a>
+            <a href="https://jacky0707.github.io/Fun-Song/posts/20210320/" class="next" rel="next" title="React SSR 專案建置">React SSR 專案建置<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jacky0707.github.io/Fun-Song/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/js/theme.min.js"></script></body>
+</html>

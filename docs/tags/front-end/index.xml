@@ -1,0 +1,53 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Front end - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/front-end/</link>
+        <description>Front end - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/front-end/" rel="self" type="application/rss+xml" /><item>
+    <title>React SSR 專案建置</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20210320/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20210320/</guid>
+    <description><![CDATA[緣起 一直以來不管是寫 react 或是 vue 的 side project ，都是用官網基本的 cli 來建置專案，幾乎沒有機會自己利用 webpack 來建立開發環境，剛好也接觸了一陣子的 typescript 跟 react，剛好找個機會來從零開始實作一趟並做個紀錄。
+Start with config init npm, git, gitignore.
+install and set the things below.
+babel:
+What is babel?
+npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react 在與 package.json 同層的資料夾下建立 .babelrc
+// .babelrc{&#34;presets&#34;: [&#34;@babel/env&#34;,&#34;@babel/preset-react&#34;]} webpack:
+What is webpack?
+npm install webpack webpack-cli webpack-dev-servernpm install babel-loader css-loader style-loader source-map-loadernpm install html-webpack-plugin mini-css-extract-plugin webpack-node-externals 在與 package.]]></description>
+</item>
+<item>
+    <title>NUXT 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200723/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200723/</guid>
+    <description><![CDATA[緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。
+但 7/1 才進新公司， TypeScript、react、redux 和一堆沒用過的 library ，加上 8 月決定要搬家所以要來賣一些不想帶走的家具，實在是有點過忙。趁著這個月的分享會到來(剛好分享 react hook)，趕稿一下。
+Get Start 這次入門講座以完成一個小專案為目標，並由四個部分組成:
+Create project npx 安裝: npx create-nuxt-app &lt;project-name&gt;，安裝選項參考:
+官網安裝說明: Nuxt install
+Directory Structure: 會在接下來的段落一一說明。 安裝完的目錄參考:
+Vuetify (Optional): Vue 的 UI 框架，但與 Nuxt 沒有必需的相依關係。 To be continue &mdash; Directory Structure: Layout 不同的 page 可以有不同的頁面布局，Side bar 的有無，Key Visaul 的呈現等等。
+要建立一個新的 layout ，只需要在 layout 資料夾中，建立一個 .vue 檔案，並且在 &lt;template&gt; tag 裡面設計自己喜歡的樣板，最後只要注意記得放入 &lt;nuxt /&gt; 來預留空間給每個 page 的內容就完成了。]]></description>
+</item>
+<item>
+    <title>SVG 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
+    <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
+    <description><![CDATA[緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我的問題。
+Get Start 要在 html 中使用 svg，就必須使用 &lt;svg&gt; 這個 tag，並且在裡面放入要畫的圖形。 由於這次只是做個入門，因此就只會做以下幾種標籤的基礎用法:
+線段: &lt;line&gt; 圓形/橢圓形: &lt;ellipse&gt; 矩形: &lt;rect&gt; 文字: &lt;text&gt; 群組: &lt;g&gt; 多邊形: &lt;polygon&gt; 路徑: &lt;path&gt; 首先先在 html 中建立一個寬度跟高度 500px，並有著 5px 粗線黑框的 svg 區塊。
+&lt;svg width=&quot;500&quot; height=&quot;500&quot; style=&quot;border: 5px solid #000000;&quot;&gt;&lt;/svg&gt;
+線段(line) 基礎用法:
+&lt;line x1=&quot;起點 x 座標&quot; y1=&quot;起點 y 座標&quot; x2=&quot;終點 x 座標&quot; y2=&quot;終點 y 座標&quot;&gt;&lt;/line&gt;
+範例(使用了 stroke 來設定筆畫顏色):
+&lt;svg width=&#34;500&#34; height=&#34;500&#34; style=&#34;border: 5px solid #000000;&#34;&gt;&lt;line x1=&#34;0&#34; y1=&#34;50&#34; x2=&#34;500&#34; y2=&#34;50&#34; stroke=&#34;gray&#34;&gt;&lt;/line&gt;&lt;/svg&gt; 接著為了後面的練習，我們用 50px 的間隔給這張圖多加上幾條線。]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,91 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>技術筆記 - Category - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/</link>
+        <description>技術筆記 - Category - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/" rel="self" type="application/rss+xml" /><item>
+    <title>Chat system with Golang</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20220203/</link>
+    <pubDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20220203/</guid>
+    <description><![CDATA[前言 年前接了一個重構聊天系統到網頁上的任務。
+現有的前端由於不是使用網頁，所以舊的 code 沒什麼參考價值。
+後端的部分先前開發的 RD 已經不在公司了 orz，交接來的 RD 說花時間看舊的 code 不如寫一個新的，但他要忙別的專案沒空弄新的給我接。
+Alright，後端說要寫新的，但他沒時間弄。我自己沒學過 golang，但我有的是時間，那麼身為 golang 新手，如果要弄出一個後端，邊學邊寫新的應該比直接看懂舊的來的簡單(吧?
+就使用 gorilla 的 Websocket package 吧!
+於是我風塵僕僕的踏進了 golang，初識了 goroutine &amp; Channel ，並且學會一些打印出 golang 中各種資料型態的方法(相較於 js &amp; ts，golang 這個強型態語言要從 0 開始直接理解現有的專案程式碼實在不是很容易&hellip;)。最後總算是看懂了 document 給的 example，並且延伸出了私人訊息的功能。
+完成了這一切後跟老闆報告進度，老闆表示: 用舊的後端吧，現有的功能其實不只聊天，要讓我重新理解並完整重構&hellip;&hellip;有點&hellip;&hellip;。
+well，老闆說的有理，改進比改革省時多了，而且歷經一個月的歷練，理解現有的 code 應該不再那麼難了。
+但為了不要讓這曾經的努力漸漸淡忘在腦海中，還是將經歷過的紀錄下來吧!
+Good to know first channel type make function select for channel Method/Function Receiver gorilla example code 目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。
+main.go 首先從程式 entry point 開始看起。]]></description>
+</item>
+<item>
+    <title>Hugo 筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20220124/</link>
+    <pubDate>Mon, 24 Jan 2022 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20220124/</guid>
+    <description><![CDATA[舊筆重提 因為懶，所以我一年半沒寫文章了。趁著這次決定要回來經營部落格，紀錄一下當初學 Hugo 的一些重點。
+近況更新 半年前換了第三份工作，三個月前買了預售屋，上個月去醫院檢查發現眼球脫皮，剛領了年終，下周春節，妹子目前待業，最常在家裡看肥波看劇跟放屁(偶爾一起寫 side project)。
+肥波吃吃照
+What is Hugo Hugo 是一個用 Go 編寫的靜態網站生成器。
+靜態網站與動態網站簡單來說可以用「是否有使用資料庫」以及「是否有很多的互動功能」來區分。
+部落格這類型的網站，主要的功能就是向 User 展示文章內容，可以做到「不使用資料庫」&amp;「不需要很多互動功能」。
+並且相較於讓工程師自己寫一個部落格網站，使用 Hugo 這樣的工具，可以讓我只需花少少的時間下載 Hugo 以及選出自己喜歡的 Hugo Theme，接著就開始專心在文章的產出上。
+安頓 Hugo 下載 我的電腦是 Window 系統的，一個很快就能安裝好 Hugo 的方式就是找到 Hugo 的 Releases，並且下載屬於自己電腦系統的壓縮檔，或是也可以參考官方文件。
+(後來發現有些 Hugo Theme 會需要 hugo extend 的版本，一樣可以在 release 中找到喔~)
+下載完之後在 C 槽建立一個名為「Hugo」的資料夾，然後在「Hugo」資料夾的資料夾底下在建立一個「bin」資料夾，最後把剛下載下來的 zip 裡面的檔案全部丟進 bin 資料夾中。
+加入環境變數 為了能讓電腦認識剛剛下載的 Hugo 的指令，我們得在系統環境變數中加入剛剛安置的 Hugo 路徑:
+按下電腦畫面左下角的「開始」，搜尋「環境變數」找到「編輯系統環境變數」，接著按下環境變數，然後按照下圖操作。
+完成之後按下鍵盤上的 Window + R 鍵，輸入 cmd ，看到 cmd.exe 的畫面之後輸入 hugo version，如果可以像下圖正確地看到自己安裝的 Hugo 版本後，就算是成功安頓 Hugo 了。]]></description>
+</item>
+<item>
+    <title>React SSR 專案建置</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20210320/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20210320/</guid>
+    <description><![CDATA[緣起 一直以來不管是寫 react 或是 vue 的 side project ，都是用官網基本的 cli 來建置專案，幾乎沒有機會自己利用 webpack 來建立開發環境，剛好也接觸了一陣子的 typescript 跟 react，剛好找個機會來從零開始實作一趟並做個紀錄。
+Start with config init npm, git, gitignore.
+install and set the things below.
+babel:
+What is babel?
+npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react 在與 package.json 同層的資料夾下建立 .babelrc
+// .babelrc{&#34;presets&#34;: [&#34;@babel/env&#34;,&#34;@babel/preset-react&#34;]} webpack:
+What is webpack?
+npm install webpack webpack-cli webpack-dev-servernpm install babel-loader css-loader style-loader source-map-loadernpm install html-webpack-plugin mini-css-extract-plugin webpack-node-externals 在與 package.]]></description>
+</item>
+<item>
+    <title>NUXT 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200723/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200723/</guid>
+    <description><![CDATA[緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。
+但 7/1 才進新公司， TypeScript、react、redux 和一堆沒用過的 library ，加上 8 月決定要搬家所以要來賣一些不想帶走的家具，實在是有點過忙。趁著這個月的分享會到來(剛好分享 react hook)，趕稿一下。
+Get Start 這次入門講座以完成一個小專案為目標，並由四個部分組成:
+Create project npx 安裝: npx create-nuxt-app &lt;project-name&gt;，安裝選項參考:
+官網安裝說明: Nuxt install
+Directory Structure: 會在接下來的段落一一說明。 安裝完的目錄參考:
+Vuetify (Optional): Vue 的 UI 框架，但與 Nuxt 沒有必需的相依關係。 To be continue &mdash; Directory Structure: Layout 不同的 page 可以有不同的頁面布局，Side bar 的有無，Key Visaul 的呈現等等。
+要建立一個新的 layout ，只需要在 layout 資料夾中，建立一個 .vue 檔案，並且在 &lt;template&gt; tag 裡面設計自己喜歡的樣板，最後只要注意記得放入 &lt;nuxt /&gt; 來預留空間給每個 page 的內容就完成了。]]></description>
+</item>
+<item>
+    <title>SVG 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
+    <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
+    <description><![CDATA[緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我的問題。
+Get Start 要在 html 中使用 svg，就必須使用 &lt;svg&gt; 這個 tag，並且在裡面放入要畫的圖形。 由於這次只是做個入門，因此就只會做以下幾種標籤的基礎用法:
+線段: &lt;line&gt; 圓形/橢圓形: &lt;ellipse&gt; 矩形: &lt;rect&gt; 文字: &lt;text&gt; 群組: &lt;g&gt; 多邊形: &lt;polygon&gt; 路徑: &lt;path&gt; 首先先在 html 中建立一個寬度跟高度 500px，並有著 5px 粗線黑框的 svg 區塊。
+&lt;svg width=&quot;500&quot; height=&quot;500&quot; style=&quot;border: 5px solid #000000;&quot;&gt;&lt;/svg&gt;
+線段(line) 基礎用法:
+&lt;line x1=&quot;起點 x 座標&quot; y1=&quot;起點 y 座標&quot; x2=&quot;終點 x 座標&quot; y2=&quot;終點 y 座標&quot;&gt;&lt;/line&gt;
+範例(使用了 stroke 來設定筆畫顏色):
+&lt;svg width=&#34;500&#34; height=&#34;500&#34; style=&#34;border: 5px solid #000000;&#34;&gt;&lt;line x1=&#34;0&#34; y1=&#34;50&#34; x2=&#34;500&#34; y2=&#34;50&#34; stroke=&#34;gray&#34;&gt;&lt;/line&gt;&lt;/svg&gt; 接著為了後面的練習，我們用 50px 的間隔給這張圖多加上幾條線。]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WebSocket - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/websocket/</link>
+        <description>WebSocket - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/websocket/" rel="self" type="application/rss+xml" /><item>
+    <title>Chat system with Golang</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20220203/</link>
+    <pubDate>Thu, 03 Feb 2022 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20220203/</guid>
+    <description><![CDATA[前言 年前接了一個重構聊天系統到網頁上的任務。
+現有的前端由於不是使用網頁，所以舊的 code 沒什麼參考價值。
+後端的部分先前開發的 RD 已經不在公司了 orz，交接來的 RD 說花時間看舊的 code 不如寫一個新的，但他要忙別的專案沒空弄新的給我接。
+Alright，後端說要寫新的，但他沒時間弄。我自己沒學過 golang，但我有的是時間，那麼身為 golang 新手，如果要弄出一個後端，邊學邊寫新的應該比直接看懂舊的來的簡單(吧?
+就使用 gorilla 的 Websocket package 吧!
+於是我風塵僕僕的踏進了 golang，初識了 goroutine &amp; Channel ，並且學會一些打印出 golang 中各種資料型態的方法(相較於 js &amp; ts，golang 這個強型態語言要從 0 開始直接理解現有的專案程式碼實在不是很容易&hellip;)。最後總算是看懂了 document 給的 example，並且延伸出了私人訊息的功能。
+完成了這一切後跟老闆報告進度，老闆表示: 用舊的後端吧，現有的功能其實不只聊天，要讓我重新理解並完整重構&hellip;&hellip;有點&hellip;&hellip;。
+well，老闆說的有理，改進比改革省時多了，而且歷經一個月的歷練，理解現有的 code 應該不再那麼難了。
+但為了不要讓這曾經的努力漸漸淡忘在腦海中，還是將經歷過的紀錄下來吧!
+Good to know first channel type make function select for channel Method/Function Receiver gorilla example code 目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。
+main.go 首先從程式 entry point 開始看起。]]></description>
+</item>
+</channel>
+</rss>

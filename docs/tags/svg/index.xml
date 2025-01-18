@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SVG - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/svg/</link>
+        <description>SVG - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 26 May 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/svg/" rel="self" type="application/rss+xml" /><item>
+    <title>SVG 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200526/</link>
+    <pubDate>Tue, 26 May 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200526/</guid>
+    <description><![CDATA[緣起 想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我的問題。
+Get Start 要在 html 中使用 svg，就必須使用 &lt;svg&gt; 這個 tag，並且在裡面放入要畫的圖形。 由於這次只是做個入門，因此就只會做以下幾種標籤的基礎用法:
+線段: &lt;line&gt; 圓形/橢圓形: &lt;ellipse&gt; 矩形: &lt;rect&gt; 文字: &lt;text&gt; 群組: &lt;g&gt; 多邊形: &lt;polygon&gt; 路徑: &lt;path&gt; 首先先在 html 中建立一個寬度跟高度 500px，並有著 5px 粗線黑框的 svg 區塊。
+&lt;svg width=&quot;500&quot; height=&quot;500&quot; style=&quot;border: 5px solid #000000;&quot;&gt;&lt;/svg&gt;
+線段(line) 基礎用法:
+&lt;line x1=&quot;起點 x 座標&quot; y1=&quot;起點 y 座標&quot; x2=&quot;終點 x 座標&quot; y2=&quot;終點 y 座標&quot;&gt;&lt;/line&gt;
+範例(使用了 stroke 來設定筆畫顏色):
+&lt;svg width=&#34;500&#34; height=&#34;500&#34; style=&#34;border: 5px solid #000000;&#34;&gt;&lt;line x1=&#34;0&#34; y1=&#34;50&#34; x2=&#34;500&#34; y2=&#34;50&#34; stroke=&#34;gray&#34;&gt;&lt;/line&gt;&lt;/svg&gt; 接著為了後面的練習，我們用 50px 的間隔給這張圖多加上幾條線。]]></description>
+</item>
+</channel>
+</rss>

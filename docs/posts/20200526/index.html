@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SVG 入門筆記 - Fun Song</title><meta name="Description" content="在 HTML 中動手畫圖"><meta property="og:title" content="SVG 入門筆記" />
+<meta property="og:description" content="在 HTML 中動手畫圖" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20200526/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-05-26T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-05-26T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SVG 入門筆記"/>
+<meta name="twitter:description" content="在 HTML 中動手畫圖"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jacky0707.github.io/Fun-Song/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://jacky0707.github.io/Fun-Song/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://jacky0707.github.io/Fun-Song/apple-touch-icon.png"><link rel="mask-icon" href="https://jacky0707.github.io/Fun-Song/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://jacky0707.github.io/Fun-Song/site.webmanifest"><link rel="canonical" href="https://jacky0707.github.io/Fun-Song/posts/20200526/" /><link rel="next" href="https://jacky0707.github.io/Fun-Song/posts/20200626/" /><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SVG 入門筆記",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20200526\/"
+        },"genre": "posts","keywords": "Front end, SVG","wordcount":  586 ,
+        "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20200526\/","datePublished": "2020-05-26T00:00:00+00:00","dateModified": "2020-05-26T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "邱嵩傑"
+            },"description": "在 HTML 中動手畫圖"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/"> Posts </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/"> Tags </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/" title="">Posts</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/" title="">Tags</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SVG 入門筆記</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技術筆記</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-05-26">2020-05-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;586 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#緣起">緣起</a></li>
+        <li><a href="#get-start">Get Start</a></li>
+        <li><a href="#線段line">線段(line)</a></li>
+        <li><a href="#圓形橢圓形ellipse">圓形/橢圓形(ellipse)</a></li>
+        <li><a href="#矩形rect">矩形(rect)</a></li>
+        <li><a href="#文字text">文字(text)</a></li>
+        <li><a href="#群組g">群組(g)</a></li>
+        <li><a href="#多邊形polygon">多邊形(polygon)</a></li>
+        <li><a href="#路徑path">路徑(path)</a></li>
+        <li><a href="#小結">小結</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="緣起">緣起</h3>
+<p>想在網頁中做一個形狀特殊一點的按鈕，圓的方的太單調不符需求，剛好久聞 svg 這個元件，感覺上可以使用這個能夠自由畫出圖案的「向量圖形」來解決我的問題。</p>
+<h3 id="get-start">Get Start</h3>
+<p>要在 html 中使用 svg，就必須使用 <code>&lt;svg&gt;</code> 這個 tag，並且在裡面放入要畫的圖形。
+由於這次只是做個入門，因此就只會做以下幾種標籤的基礎用法:</p>
+<ol>
+<li>線段: <code>&lt;line&gt;</code></li>
+<li>圓形/橢圓形: <code>&lt;ellipse&gt;</code></li>
+<li>矩形: <code>&lt;rect&gt;</code></li>
+<li>文字: <code>&lt;text&gt;</code></li>
+<li>群組: <code>&lt;g&gt;</code></li>
+<li>多邊形: <code>&lt;polygon&gt;</code></li>
+<li>路徑: <code>&lt;path&gt;</code></li>
+</ol>
+<p>首先先在 html 中建立一個寬度跟高度 500px，並有著 5px 粗線黑框的 svg 區塊。<br>
+<code>&lt;svg width=&quot;500&quot; height=&quot;500&quot; style=&quot;border: 5px solid #000000;&quot;&gt;&lt;/svg&gt;</code></p>
+<h3 id="線段line">線段(line)</h3>
+<p>基礎用法:<br>
+<code>&lt;line x1=&quot;起點 x 座標&quot; y1=&quot;起點 y 座標&quot; x2=&quot;終點 x 座標&quot; y2=&quot;終點 y 座標&quot;&gt;&lt;/line&gt;</code></p>
+<p>範例(使用了 stroke 來設定筆畫顏色):</p>
+<pre tabindex="0"><code>&lt;svg width=&#34;500&#34; height=&#34;500&#34; style=&#34;border: 5px solid #000000;&#34;&gt;
+    &lt;line x1=&#34;0&#34; y1=&#34;50&#34; x2=&#34;500&#34; y2=&#34;50&#34; stroke=&#34;gray&#34;&gt;&lt;/line&gt;
+&lt;/svg&gt;
+</code></pre><p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/line.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/line.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/line.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/line.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/line.png#width250"
+        title="line" /></p>
+<p>接著為了後面的練習，我們用 50px 的間隔給這張圖多加上幾條線。</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/lines.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/lines.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/lines.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/lines.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/lines.png#width250"
+        title="lines" /></p>
+<h3 id="圓形橢圓形ellipse">圓形/橢圓形(ellipse)</h3>
+<p>基礎用法:<br>
+<code>&lt;ellipse cx=&quot;圓心 x 座標&quot; cy=&quot;圓心 y 座標&quot; rx=&quot;x 方向半徑&quot; ry=&quot;y 方向半徑&quot;&gt;&lt;/ellipse&gt;</code></p>
+<p>範例(使用了 fill 來設定填滿顏色):<br>
+<code>&lt;ellipse cx=&quot;50&quot; cy=&quot;50&quot; rx=&quot;20&quot; ry=&quot;20&quot; stroke=&quot;blue&quot; fill=&quot;#00FFFF&quot;&gt;&lt;/ellipse&gt;</code></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/ellipse.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/ellipse.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/ellipse.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/ellipse.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/ellipse.png#width250"
+        title="ellipse" /></p>
+<h3 id="矩形rect">矩形(rect)</h3>
+<p>基礎用法:<br>
+<code>&lt;rect x=&quot;起點 x 座標&quot; y=&quot;起點 y 座標&quot; height=&quot;高度&quot; width=&quot;寬度&quot; fill=&quot;blue&quot;&gt;&lt;/rect&gt;</code></p>
+<p>範例:<br>
+<code>&lt;rect x=&quot;25&quot; y=&quot;125&quot; height=&quot;150&quot; width=&quot;100&quot; stroke=&quot;red&quot; fill=&quot;pink&quot;&gt;&lt;/rect&gt;</code></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/rect.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/rect.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/rect.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/rect.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/rect.png#width250"
+        title="rectangle" /></p>
+<h3 id="文字text">文字(text)</h3>
+<p>基礎用法:<br>
+<code>&lt;text x=&quot;x 座標&quot; y=&quot;y 座標&quot; text-anchor=&quot;對齊錨點&quot; alignment-baseline=&quot;垂直隊齊方式&quot;&gt;文字內容&lt;/text&gt;</code></p>
+<p>text-anchor 的可用值: start | middle | end，參考 <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/text-anchor" target="_blank" rel="noopener noreffer ">text-anchor</a></p>
+<p>alignment-baseline 的可用值:<br>
+auto | baseline | before-edge | text-before-edge | middle | central | after-edge | text-after-edge | ideographic | alphabetic | hanging | mathematical | top | center | bottom，參考<a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/alignment-baseline" target="_blank" rel="noopener noreffer ">alignment-baseline</a></p>
+<p>範例(調整了 font-size 的 style 來讓字體大一點):<br>
+<code>&lt;text x=&quot;100&quot; y=&quot;225&quot; text-anchor=&quot;middle&quot; alignment-baseline=&quot;middle&quot; style=&quot;font-size: 24px;&quot;&gt;Hello&lt;/text&gt;</code></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/text.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/text.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/text.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/text.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/text.png#width250"
+        title="text" /></p>
+<p>這邊我們直接把 text 的位置設定在前面的矩形內部，可以發現文字的位置是在矩形之上的(沒有被粉紅色的矩形給蓋過看不見)，為什麼是文字在上呢?讓我們回頭看看程式碼</p>
+<pre tabindex="0"><code>&lt;rect x=&#34;50&#34; y=&#34;150&#34; height=&#34;150&#34; width=&#34;100&#34; stroke=&#34;red&#34; fill=&#34;pink&#34;&gt;&lt;/rect&gt; /// 先寫的
+&lt;text x=&#34;100&#34; y=&#34;225&#34; text-anchor=&#34;middle&#34; alignment-baseline=&#34;middle&#34; style=&#34;font-size: 24px;&#34;&gt;Hello&lt;/text&gt;/// 後寫的
+</code></pre><p>比較晚加上的圖層會蓋過前面的圖層，因為我們先寫了 <code>&lt;rect&gt;</code> 才寫了 <code>&lt;text&gt;</code> 所以文字在上，如果反過來的畫，<strong>上下的順序就會相反了喔!</strong></p>
+<h3 id="群組g">群組(g)</h3>
+<p>基礎用法:<br>
+<code>&lt;g&gt;要被群組起來的內容&lt;/g&gt;</code></p>
+<p>範例(使用 transform:rotate()來讓整個群組內的東西一起旋轉):</p>
+<pre tabindex="0"><code>&lt;g style=&#34;transform: rotate(-10deg);&#34;&gt;
+    &lt;rect x=&#34;50&#34; y=&#34;150&#34; height=&#34;150&#34; width=&#34;100&#34; stroke=&#34;red&#34; fill=&#34;pink&#34;&gt;&lt;/rect&gt;
+    &lt;text x=&#34;100&#34; y=&#34;225&#34; text-anchor=&#34;middle&#34; alignment-baseline=&#34;middle&#34; style=&#34;font-size: 24px;&#34;&gt;Hello&lt;/text&gt;
+&lt;/g&gt;
+</code></pre><p>把剛剛的矩形跟文字群組起來。<br>
+要注意的是這裡的 -10deg (逆時鐘轉 10 度) 是整個群組繞著相對參考點(在 svg 中參考點是最左上的點)所轉的度數，而不是自身旋轉的度數。</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/g.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/g.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/g.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/g.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/g.png#width250"
+        title="g" /></p>
+<h3 id="多邊形polygon">多邊形(polygon)</h3>
+<p>基礎用法:<br>
+<code>&lt;polygon points=&quot;x1,y1 x2,y2 x3,y3 ......&quot;&gt;&lt;/polygon&gt;</code></p>
+<p>範例(使用 stroke-width 設定筆畫寬度):<br>
+<code>&lt;polygon points=&quot;100,300 50,450 175,350 25,350 150,450&quot; fill=&quot;yellow&quot; stroke=&quot;red&quot; stroke-width=&quot;3&quot;&gt;&lt;/polygon&gt;</code></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/polygon.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/polygon.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/polygon.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/polygon.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/polygon.png#width250"
+        title="polygon" /></p>
+<p>這邊依序給予 polygon 五個點</p>
+<ol>
+<li>100,300</li>
+<li>50,450</li>
+<li>175,350</li>
+<li>25,350</li>
+<li>150,450
+來繪出這個星型。</li>
+</ol>
+<h3 id="路徑path">路徑(path)</h3>
+<p>基礎用法:<br>
+<code>&lt;path d=&quot;做圖參數&quot;&gt;&lt;/path&gt;</code></p>
+<p>做圖參數有以下幾種(附上不專業翻譯)</p>
+<ul>
+<li>M = moveto (起點位置)</li>
+<li>L = lineto (畫線到)</li>
+<li>H = horizontal lineto (畫水平線到)</li>
+<li>V = vertical lineto (畫垂直線到)</li>
+<li>C = curveto (畫 Bézier 曲線)</li>
+<li>S = smooth curveto (畫反射的 Bézier 曲線)</li>
+<li>Q = quadratic Bézier curve (二次 Bézier 曲線)</li>
+<li>T = smooth quadratic Bézier curveto (反射的二次 Bézier 曲線)</li>
+<li>A = elliptical Arc (畫橢圓弧)</li>
+<li>Z = closepath (畫直線回到起點)</li>
+</ul>
+<p>以上的英文字母都可以使用小寫來改寫，大寫為絕對位置，小寫為相對位置。<br>
+由於種類過多，這邊的範例就只做部分。</p>
+<p>範例 1 :<br>
+<code>&lt;path d=&quot;M250 50 H350 V25 L400 75 L350 125 v-25 h-100 Z&quot; fill=&quot;yellow&quot; stroke=&quot;green&quot;&gt;&lt;/path&gt;</code></p>
+<p>說明:</p>
+<ol>
+<li><strong>M250 50</strong>: 起點 250, 50</li>
+<li><strong>H350</strong>: 畫水平線往右到 x 座標為 350</li>
+<li><strong>V25</strong>: 畫垂直線到 y 座標為 25</li>
+<li><strong>L400</strong> 75: 畫線到座標 400,75</li>
+<li><strong>L350</strong> 125: 畫線到座標 350,125</li>
+<li><strong>v-25</strong>: 注意這邊為小寫的 v ，因此代表相對位置，垂直方向 -25</li>
+<li><strong>h-100</strong>: h 同樣為小寫，水平座標 -100</li>
+<li><strong>Z</strong>: 畫直線回起點</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_arrow.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_arrow.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_arrow.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_arrow.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_arrow.png#width250"
+        title="path_arrow" /></p>
+<p>範例 2 :<br>
+<code>&lt;path d=&quot;M250 200 Q275 100 300 200 T350 200&quot; fill=&quot;yellow&quot; stroke=&quot;green&quot;/&gt;</code></p>
+<p>說明:</p>
+<ol>
+<li><strong>M250 200</strong>: 起點 250, 200</li>
+<li><strong>Q275 100 300 200</strong>: 如果只是想簡單的調整參數畫出二次 Bézier 曲線，可以這樣記:</li>
+</ol>
+<ul>
+<li>M 的數值: 250, 200 是曲線的起點，</li>
+<li>Q 的倒數兩個數值: 300, 200 是曲線的終點</li>
+<li>Q 的前兩個數值: 275 100 是曲線彎曲方向所指向的點(曲線控制點)。</li>
+</ul>
+<ol start="3">
+<li><strong>T350 200</strong>: 倒映前一個二次 Bézier 曲線使用的曲線控制點，並將終點設為 350, 200
+<img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_Q_T.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_Q_T.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_Q_T.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_Q_T.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_Q_T.png#width250"
+        title="path_Q_T" /></li>
+</ol>
+<p>對 Bézier 曲線有興趣的人可以參考<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E8%8C%B2%E6%9B%B2%E7%B7%9A#%E4%BA%8C%E6%AC%A1%E6%9B%B2%E7%B7%9A" target="_blank" rel="noopener noreffer ">二次 Bézier 曲線</a>，圖中的 P1 就是此處所稱的曲線控制點。</p>
+<p>範例 3 :<br>
+<code>&lt;path d=&quot;M400 300 A50 20 0 1 0 350 275 Z&quot; fill=&quot;yellow&quot; stroke=&quot;green&quot;/&gt;</code></p>
+<p>說明:</p>
+<ol>
+<li><strong>M400 300</strong>: 起點 350,300</li>
+<li><strong>A50 20 0 1 0 350 275</strong>:</li>
+</ol>
+<ul>
+<li>前兩個數值 50,20: 橢圓弧 x 半徑 50，y 半徑 20</li>
+<li>第三個數值 0: 與 x 軸旋轉 0 度</li>
+<li>第四個數值 1: 數值為 1 的話為最大角度弧線，數值為 0 的話為最小角度弧線</li>
+<li>第五個數值 0: 數值為 1 為順時針，數值為 0 為逆時針。</li>
+</ul>
+<ol start="3">
+<li><strong>Z</strong>: 畫一條線連回起點。</li>
+</ol>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_A_Z.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_A_Z.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_A_Z.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_A_Z.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/path_A_Z.png#width250"
+        title="path_A_Z" /></p>
+<p>範例 4 :
+沒有按鈕的 Switch</p>
+<pre tabindex="0"><code>&lt;path d=&#34;M275 350 A25 25 0 0 0 250 375 V425 A25 25 0 0 0 275 450 Z&#34; fill=&#34;#00FFFF&#34;&gt;&lt;/path&gt;
+&lt;path d=&#34;M275 350 A25 25 0 0 0 250 375&#34; stroke=&#34;black&#34; stroke-width=&#34;2&#34; fill=&#34;none&#34;&gt;&lt;/path&gt;
+&lt;rect x=&#34;275&#34; y=&#34;350&#34; height=&#34;100&#34; width=&#34;150&#34;&gt;&lt;/rect&gt;
+&lt;rect x=&#34;290&#34; y=&#34;365&#34; height=&#34;70&#34; width=&#34;120&#34; fill=&#34;gray&#34;&gt;&lt;/rect&gt;
+&lt;path d=&#34;M425 350 A25 25 0 0 1 450 375 V425 A25 25 0 0 1 425 450 Z&#34; fill=&#34;red&#34;&gt;&lt;/path&gt;
+&lt;path d=&#34;M425 350 A25 25 0 0 1 450 375&#34; stroke=&#34;black&#34; stroke-width=&#34;2&#34; fill=&#34;none&#34;&gt;&lt;/path&gt;
+</code></pre><p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/switch.png#width250"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/switch.png#width250, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/switch.png#width250 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/switch.png#width250 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20200526/switch.png#width250"
+        title="switch" /></p>
+<h3 id="小結">小結</h3>
+<p>以上的介紹應該是足夠繪出簡單的圖型了，如果之後遇到了需要用到 SVG 更高深的技巧，或許會再來寫 part 2 吧。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-05-26</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jacky0707.github.io/Fun-Song/posts/20200526/" data-title="SVG 入門筆記" data-hashtags="Front end,SVG"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jacky0707.github.io/Fun-Song/posts/20200526/" data-hashtag="Front end"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://jacky0707.github.io/Fun-Song/posts/20200526/" data-title="SVG 入門筆記"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jacky0707.github.io/Fun-Song/posts/20200526/" data-title="SVG 入門筆記"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jacky0707.github.io/Fun-Song/posts/20200526/" data-title="SVG 入門筆記"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/svg/">SVG</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="https://jacky0707.github.io/Fun-Song/posts/20200626/" class="next" rel="next" title="端午嘉義行 day 1">端午嘉義行 day 1<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jacky0707.github.io/Fun-Song/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/js/theme.min.js"></script></body>
+</html>
