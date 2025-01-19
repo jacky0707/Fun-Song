@@ -1,0 +1,23 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>TypeScript - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/typescript/</link>
+        <description>TypeScript - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/typescript/" rel="self" type="application/rss+xml" /><item>
+    <title>React SSR 專案建置</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20210320/</link>
+    <pubDate>Sat, 20 Mar 2021 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20210320/</guid>
+    <description><![CDATA[緣起 一直以來不管是寫 react 或是 vue 的 side project ，都是用官網基本的 cli 來建置專案，幾乎沒有機會自己利用 webpack 來建立開發環境，剛好也接觸了一陣子的 typescript 跟 react，剛好找個機會來從零開始實作一趟並做個紀錄。
+Start with config init npm, git, gitignore.
+install and set the things below.
+babel:
+What is babel?
+npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react 在與 package.json 同層的資料夾下建立 .babelrc
+// .babelrc{&#34;presets&#34;: [&#34;@babel/env&#34;,&#34;@babel/preset-react&#34;]} webpack:
+What is webpack?
+npm install webpack webpack-cli webpack-dev-servernpm install babel-loader css-loader style-loader source-map-loadernpm install html-webpack-plugin mini-css-extract-plugin webpack-node-externals 在與 package.]]></description>
+</item>
+</channel>
+</rss>

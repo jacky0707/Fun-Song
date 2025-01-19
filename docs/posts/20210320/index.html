@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>React SSR 專案建置 - Fun Song</title><meta name="Description" content="React SSR with typescript"><meta property="og:title" content="React SSR 專案建置" />
+<meta property="og:description" content="React SSR with typescript" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20210320/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-03-20T00:00:00+00:00" />
+<meta property="article:modified_time" content="2021-03-20T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="React SSR 專案建置"/>
+<meta name="twitter:description" content="React SSR with typescript"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jacky0707.github.io/Fun-Song/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://jacky0707.github.io/Fun-Song/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://jacky0707.github.io/Fun-Song/apple-touch-icon.png"><link rel="mask-icon" href="https://jacky0707.github.io/Fun-Song/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://jacky0707.github.io/Fun-Song/site.webmanifest"><link rel="canonical" href="https://jacky0707.github.io/Fun-Song/posts/20210320/" /><link rel="prev" href="https://jacky0707.github.io/Fun-Song/posts/20200723/" /><link rel="next" href="https://jacky0707.github.io/Fun-Song/posts/20220124/" /><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "React SSR 專案建置",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20210320\/"
+        },"genre": "posts","keywords": "Front end, React, TypeScript, webpack","wordcount":  575 ,
+        "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20210320\/","datePublished": "2021-03-20T00:00:00+00:00","dateModified": "2021-03-20T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "邱嵩傑"
+            },"description": "React SSR with typescript"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/"> Posts </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/"> Tags </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/" title="">Posts</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/" title="">Tags</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">React SSR 專案建置</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技術筆記</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2021-03-20">2021-03-20</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;575 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#緣起">緣起</a></li>
+        <li><a href="#start-with-config">Start with config</a></li>
+        <li><a href="#start-building-the-app">Start building the app</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h3 id="緣起">緣起</h3>
+<p>一直以來不管是寫 react 或是 vue 的 side project ，都是用官網基本的 cli 來建置專案，幾乎沒有機會自己利用 webpack 來建立開發環境，剛好也接觸了一陣子的 typescript 跟 react，剛好找個機會來從零開始實作一趟並做個紀錄。</p>
+<h3 id="start-with-config">Start with config</h3>
+<ol>
+<li>
+<p>init npm, git, gitignore.</p>
+</li>
+<li>
+<p>install and set the things below.</p>
+</li>
+</ol>
+<p><strong>babel:</strong></p>
+<p><a href="https://babeljs.io/docs/en/" target="_blank" rel="noopener noreffer ">What is babel?</a></p>
+<pre tabindex="0"><code>npm install @babel/cli @babel/core @babel/preset-env @babel/preset-react
+</code></pre><p>在與 <code>package.json</code> 同層的資料夾下建立 <code>.babelrc</code></p>
+<pre tabindex="0"><code>// .babelrc
+
+{
+  &#34;presets&#34;: [
+    &#34;@babel/env&#34;,
+    &#34;@babel/preset-react&#34;
+  ]
+}
+</code></pre><p><strong>webpack:</strong></p>
+<p><a href="https://webpack.js.org/concepts/" target="_blank" rel="noopener noreffer ">What is webpack?</a></p>
+<pre tabindex="0"><code>npm install webpack webpack-cli webpack-dev-server
+npm install babel-loader css-loader style-loader source-map-loader
+npm install html-webpack-plugin mini-css-extract-plugin webpack-node-externals
+</code></pre><p>在與 <code>package.json</code> 同層的資料夾下分別建立 <code>webpack.config.js</code>, <code>webpack.config.client.js</code>, <code>webpack.config.server.js</code>。</p>
+<pre tabindex="0"><code>// webpack.config.js
+
+const client = require(&#39;./webpack.config.client&#39;)
+const server = require(&#39;./webpack.server.client&#39;)
+
+module.exports = [client, server]
+</code></pre><p>Webpack 幾本用法:</p>
+<ul>
+<li>
+<p><code>entry</code> : 告訴 webpack 我們專案的進入點。</p>
+</li>
+<li>
+<p><code>mode</code> : 分別有 development, production, none 三種 mode, webpack 會對不同的 mode 在 build 的時候做不同的優化。</p>
+</li>
+<li>
+<p><code>module</code> : 告訴 webpack 如何處理不同的 module。例如:</p>
+<ul>
+<li>An ES2015 <code>import</code> statement</li>
+<li>A CommonJS <code>require()</code> statement</li>
+<li>An <code>@import</code> statement inside of a css/sass/less file.</li>
+</ul>
+<p>另外 loader 的設定可以讓 webpack 處理非 Javascript 的程式碼轉換成一包可以讓 <code>target</code>(下述)執行的檔案。</p>
+</li>
+<li>
+<p><code>target</code> : 告訴 webpack 使用哪種環境編譯程式碼(default 為 <code>web</code> or <code>browserslist</code>)。</p>
+</li>
+<li>
+<p><code>resolve</code> : 設定 webpack 如何 resolve 各種 module，<code>resolve</code> 的 config option 十分多種，例如:</p>
+<ul>
+<li><code>alias</code> : 建立 <code>require</code> or <code>import</code> 的別名，在引入時方便使用。</li>
+<li><code>extensions</code> : 按照順序解析 list 裡面的附檔名，可以在引入時不寫副檔名。</li>
+</ul>
+</li>
+<li>
+<p><code>output</code> : 編譯完程式碼後，輸出的檔名以及存放的位置。</p>
+</li>
+<li>
+<p><code>plugins</code> : 客製 webpack 的建構過程。</p>
+</li>
+</ul>
+<pre tabindex="0"><code>// webpack.config.client.js
+
+const path = require(&#34;path&#34;);
+const webpack = require(&#34;webpack&#34;);
+
+module.exports = {
+  entry: &#34;./src/react/index.tsx&#34;,
+  mode: &#34;development&#34;,
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: &#34;babel-loader&#34;,
+        options: { presets: [&#34;@babel/env&#34;] }
+      },
+      {
+        test: /\.css$/,
+        use: [&#34;style-loader&#34;, &#34;css-loader&#34;]
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: &#34;awesome-typescript-loader&#34;,
+      },
+    ]
+  },
+  resolve: {
+    extensions: [&#34;.js&#34;, &#34;.jsx&#34;, &#34;.ts&#34;, &#34;.tsx&#34;]
+  },
+  output: {
+    path: path.resolve(__dirname, &#34;dist&#34;),
+    filename: &#34;bundle.js&#34;
+  },
+  plugins: [new webpack.HotModuleReplacementPlugin()],
+  mode: &#39;development&#39;
+};
+</code></pre><pre tabindex="0"><code>// webpack.config.server.js
+
+const path = require(&#34;path&#34;);
+const webpackNodeExternals = require(&#34;webpack-node-externals&#34;);
+
+module.exports = {
+  target: &#34;node&#34;,
+  entry: &#34;./src/express/index.tsx&#34;,
+  output: {
+    filename: &#34;bundle.js&#34;,
+    path: path.resolve(__dirname, &#34;build&#34;),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        loader: &#34;babel-loader&#34;,
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.(ts|tsx)$/,
+        loader: &#34;awesome-typescript-loader&#34;,
+      },
+    ],
+  },
+  resolve: {
+    extensions: [&#34;.js&#34;, &#34;.jsx&#34;, &#34;.ts&#34;, &#34;.tsx&#34;]
+  },
+  externals: [webpackNodeExternals()],
+  mode: &#39;development&#39;
+};
+</code></pre><p><strong>TypeScript</strong></p>
+<p><a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreffer ">What is TypeScript</a></p>
+<pre tabindex="0"><code>  npm install typescript @types/react @types/react-dom @types/express @types/node @types/jest
+  npm install awesome-typescript-loader
+</code></pre><p>在與 <code>package.json</code> 同層的資料夾下建立 <code>tsconfig.json</code></p>
+<pre tabindex="0"><code>// tsconfig.json
+
+{
+  &#34;compilerOptions&#34;: {
+    &#34;jsx&#34;: &#34;react&#34;,
+    &#34;module&#34;: &#34;commonjs&#34;,
+    &#34;noImplicitAny&#34;: true,
+    &#34;outDir&#34;: &#34;./dist/&#34;,
+    &#34;preserveConstEnums&#34;: true,
+    &#34;removeComments&#34;: true,
+    &#34;sourceMap&#34;: true,
+    &#34;target&#34;: &#34;es5&#34;,
+    &#34;esModuleInterop&#34;: true
+  },
+  &#34;include&#34;: [
+    &#34;src/react/index.tsx&#34;
+  ]
+}
+</code></pre><p><strong>App</strong></p>
+<pre tabindex="0"><code>npm install express nodemon npm-run-all react react-dom
+</code></pre><p>加入啟動 app 的腳本: 修改 <code>package.json</code> 裡的 <code>script</code>。</p>
+<pre tabindex="0"><code>// package.json
+
+&#34;scripts&#34;: {
+  &#34;test&#34;: &#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;,
+  &#34;start&#34;: &#34;webpack-dev-server&#34;,
+  &#34;dev&#34;: &#34;npm-run-all --parallel dev:server dev:build:*&#34;,
+  &#34;dev:server&#34;: &#34;nodemon --inspect build/bundle.js&#34;,
+  &#34;dev:build:server&#34;: &#34;webpack --config webpack.config.server.js --watch&#34;,
+  &#34;dev:build:client&#34;: &#34;webpack --config webpack.config.client.js --watch&#34;
+},
+</code></pre><p>至此基本的 config 都已完成，可以開始 app 的建置了。</p>
+<h3 id="start-building-the-app">Start building the app</h3>
+<p>在與 <code>package.json</code> 同層的資料夾下建立 src 資料夾，並在 src 資料夾底下建立 <code>react</code> 以及 <code>express</code> 兩個資料夾，分別在兩個資料夾底下都建立一個 <code>index.tsx</code>，並在 react 底下多建立一個 <code>app.tsx</code>。</p>
+<pre tabindex="0"><code>// src/express/index.tsx
+
+import express from &#34;express&#34;;
+import React from &#34;react&#34;;
+import { renderToString } from &#34;react-dom/server&#34;;
+import App from &#39;../react/app&#39;
+const app = express();
+
+app.use(express.static(&#34;dist&#34;));
+
+app.get(&#34;*&#34;, (req, res) =&gt; {
+  const content = renderToString(
+    &lt;App /&gt;
+  );
+
+  const html = `
+    &lt;html&gt;
+      &lt;head&gt;&lt;/head&gt;
+      &lt;body&gt;
+        &lt;div id=&#34;root&#34;&gt;${content}&lt;/div&gt;
+        &lt;script src=&#34;bundle.js&#34;&gt;&lt;/script&gt;
+      &lt;/body&gt;
+    &lt;/html&gt;
+  `;
+
+  res.send(html);
+});
+
+app.listen(3000, () =&gt; {
+  console.log(&#34;listening on port 3000&#34;);
+});
+</code></pre><pre tabindex="0"><code>// /src/react/index.tsx
+
+import React from &#34;react&#34;;
+import ReactDOM from &#34;react-dom&#34;;
+import App from &#34;./app&#34;;
+
+ReactDOM.hydrate(&lt;App /&gt;, document.getElementById(&#34;root&#34;));
+</code></pre><pre tabindex="0"><code>// /src/react/app.tsx
+
+import React from &#39;react&#39;;
+
+import Test from &#39;./components/test&#39;
+
+interface Ipage {
+	path: string
+	component: any
+	key:string
+}
+
+class App extends React.Component {
+	render(){
+		return(
+			&lt;Test /&gt;
+		)
+	}
+}
+
+export default App;
+</code></pre><p>最後在 <code>src/react</code> 底下建立一個 <code>components</code> 資料夾，並加入 <code>test.tsx</code> component</p>
+<pre tabindex="0"><code>// src/react/components/test.tsx
+
+import React from &#39;react&#39;;
+
+const Test = () =&gt; (&lt;div&gt;test&lt;/div&gt;)
+
+export default Test
+</code></pre><p>執行 <code>npm run dev</code> 之後，就可以看到建置成功的專案了喔。</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-03-20</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jacky0707.github.io/Fun-Song/posts/20210320/" data-title="React SSR 專案建置" data-hashtags="Front end,React,TypeScript,webpack"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jacky0707.github.io/Fun-Song/posts/20210320/" data-hashtag="Front end"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://jacky0707.github.io/Fun-Song/posts/20210320/" data-title="React SSR 專案建置"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jacky0707.github.io/Fun-Song/posts/20210320/" data-title="React SSR 專案建置"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jacky0707.github.io/Fun-Song/posts/20210320/" data-title="React SSR 專案建置"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/front-end/">Front end</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/react/">React</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/typescript/">TypeScript</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/webpack/">webpack</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://jacky0707.github.io/Fun-Song/posts/20200723/" class="prev" rel="prev" title="NUXT 入門筆記"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>NUXT 入門筆記</a>
+            <a href="https://jacky0707.github.io/Fun-Song/posts/20220124/" class="next" rel="next" title="Hugo 筆記">Hugo 筆記<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jacky0707.github.io/Fun-Song/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/js/theme.min.js"></script></body>
+</html>

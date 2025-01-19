@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Chat system with Golang - Fun Song</title><meta name="Description" content="Chat system with Golang"><meta property="og:title" content="Chat system with Golang" />
+<meta property="og:description" content="Chat system with Golang" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://jacky0707.github.io/Fun-Song/posts/20220203/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-02-03T00:00:00+00:00" />
+<meta property="article:modified_time" content="2022-02-03T00:00:00+00:00" /><meta property="og:site_name" content="My cool site" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Chat system with Golang"/>
+<meta name="twitter:description" content="Chat system with Golang"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="https://jacky0707.github.io/Fun-Song/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="https://jacky0707.github.io/Fun-Song/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="https://jacky0707.github.io/Fun-Song/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="https://jacky0707.github.io/Fun-Song/apple-touch-icon.png"><link rel="mask-icon" href="https://jacky0707.github.io/Fun-Song/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="https://jacky0707.github.io/Fun-Song/site.webmanifest"><link rel="canonical" href="https://jacky0707.github.io/Fun-Song/posts/20220203/" /><link rel="prev" href="https://jacky0707.github.io/Fun-Song/posts/20220124/" /><link rel="next" href="https://jacky0707.github.io/Fun-Song/posts/20230218/" /><link rel="stylesheet" href="https://jacky0707.github.io/Fun-Song/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Chat system with Golang",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220203\/"
+        },"genre": "posts","keywords": "Golang, WebSocket","wordcount":  835 ,
+        "url": "https:\/\/jacky0707.github.io\/Fun-Song\/posts\/20220203\/","datePublished": "2022-02-03T00:00:00+00:00","dateModified": "2022-02-03T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "邱嵩傑"
+            },"description": "Chat system with Golang"
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/"> Posts </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/"> Tags </a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/"> Categories </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="https://jacky0707.github.io/Fun-Song/" title="Fun Song">My cool site</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/posts/" title="">Posts</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/tags/" title="">Tags</a><a class="menu-item" href="https://jacky0707.github.io/Fun-Song/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Chat system with Golang</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://jacky0707.github.io/Fun-Song/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>邱嵩傑</a></span>&nbsp;<span class="post-category">included in <a href="https://jacky0707.github.io/Fun-Song/categories/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>技術筆記</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-02-03">2022-02-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;835 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#good-to-know-first">Good to know first</a></li>
+    <li><a href="#gorilla-example-code">gorilla example code</a>
+      <ul>
+        <li><a href="#maingo">main.go</a></li>
+        <li><a href="#clientgo">client.go</a></li>
+        <li><a href="#hubgo">hub.go</a></li>
+        <li><a href="#readpump">readPump</a></li>
+      </ul>
+    </li>
+    <li><a href="#private-message">private message</a>
+      <ul>
+        <li><a href="#第一步紀錄訊息資料">第一步，紀錄訊息資料</a></li>
+        <li><a href="#第二步連接-ws-時紀錄-sender--receiver">第二步，連接 ws 時紀錄 sender &amp; receiver</a></li>
+        <li><a href="#第三步只把訊息傳給指定的-sender--receiver">第三步，只把訊息傳給指定的 sender &amp; receiver</a></li>
+      </ul>
+    </li>
+    <li><a href="#postman-測試">Postman 測試</a></li>
+    <li><a href="#成果">成果</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="前言">前言</h2>
+<p>年前接了一個重構聊天系統到網頁上的任務。</p>
+<p>現有的前端由於不是使用網頁，所以舊的 code 沒什麼參考價值。</p>
+<p>後端的部分先前開發的 RD 已經不在公司了 orz，交接來的 RD 說花時間看舊的 code 不如寫一個新的，但他要忙別的專案沒空弄新的給我接。</p>
+<p>Alright，後端說要寫新的，但他沒時間弄。我自己沒學過 golang，但我有的是時間，那麼身為 golang 新手，如果要弄出一個後端，邊學邊寫新的應該比直接看懂舊的來的簡單(吧?</p>
+<p>就使用 gorilla 的 Websocket package 吧!</p>
+<p>於是我風塵僕僕的踏進了 golang，初識了 goroutine &amp; Channel ，並且學會一些打印出 golang 中各種資料型態的方法(相較於 js &amp; ts，golang 這個強型態語言要從 0 開始直接理解現有的專案程式碼實在不是很容易&hellip;)。最後總算是看懂了 document 給的 <a href="https://github.com/gorilla/websocket/tree/master/examples/chat" target="_blank" rel="noopener noreffer ">example</a>，並且延伸出了私人訊息的功能。</p>
+<p>完成了這一切後跟老闆報告進度，老闆表示: 用舊的後端吧，現有的功能其實不只聊天，要讓我重新理解並完整重構&hellip;&hellip;有點&hellip;&hellip;。</p>
+<p>well，老闆說的有理，改進比改革省時多了，而且歷經一個月的歷練，理解現有的 code 應該不再那麼難了。</p>
+<p>但為了不要讓這曾經的努力漸漸淡忘在腦海中，還是將經歷過的紀錄下來吧!</p>
+<h2 id="good-to-know-first">Good to know first</h2>
+<ul>
+<li><code>channel</code> type</li>
+<li><code>make</code> function</li>
+<li><code>select</code> for <code>channel</code></li>
+<li>Method/Function Receiver</li>
+</ul>
+<h2 id="gorilla-example-code">gorilla example code</h2>
+<p>目標是將 example code 延伸出私訊的功能，所以打算先看懂現有的 code，在來開始做延伸。</p>
+<h3 id="maingo">main.go</h3>
+<p>首先從程式 entry point 開始看起。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">flag</span><span class="p">.</span><span class="nf">Parse</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// create hub instance
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">hub</span> <span class="o">:=</span> <span class="nf">newHub</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// run new goroutine for hub
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">go</span> <span class="nx">hub</span><span class="p">.</span><span class="nf">run</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// serve front end page, but it&#39;s not necessary for websocket server
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span> <span class="nx">serveHome</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// websocket api
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">http</span><span class="p">.</span><span class="nf">HandleFunc</span><span class="p">(</span><span class="s">&#34;/ws&#34;</span><span class="p">,</span> <span class="kd">func</span><span class="p">(</span><span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">serveWs</span><span class="p">(</span><span class="nx">hub</span><span class="p">,</span> <span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// start serve
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">err</span> <span class="o">:=</span> <span class="nx">http</span><span class="p">.</span><span class="nf">ListenAndServe</span><span class="p">(</span><span class="o">*</span><span class="nx">addr</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="s">&#34;ListenAndServe: &#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>看起來我們所需要的 websocket 精華寫在 <code>serveWs</code> 以及 <code>newHub()</code> 中。</p>
+<h3 id="clientgo">client.go</h3>
+<p>接著 follow 上述來到 client.go 找到 <code>serveWs</code> 這個 function。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">serveWs</span><span class="p">(</span><span class="nx">hub</span> <span class="o">*</span><span class="nx">Hub</span><span class="p">,</span> <span class="nx">w</span> <span class="nx">http</span><span class="p">.</span><span class="nx">ResponseWriter</span><span class="p">,</span> <span class="nx">r</span> <span class="o">*</span><span class="nx">http</span><span class="p">.</span><span class="nx">Request</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// upgrade http request to websocket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">conn</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">upgrader</span><span class="p">.</span><span class="nf">Upgrade</span><span class="p">(</span><span class="nx">w</span><span class="p">,</span> <span class="nx">r</span><span class="p">,</span> <span class="kc">nil</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="c1">// declare a client variable with current connection data
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">Client</span><span class="p">{</span><span class="nx">hub</span><span class="p">:</span> <span class="nx">hub</span><span class="p">,</span> <span class="nx">conn</span><span class="p">:</span> <span class="nx">conn</span><span class="p">,</span> <span class="nx">send</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">256</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// send client as a data in to register channel
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="nx">client</span><span class="p">.</span><span class="nx">hub</span><span class="p">.</span><span class="nx">register</span> <span class="o">&lt;-</span> <span class="nx">client</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="c1">// Allow collection of memory referenced by the caller by doing all work in
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="c1">// new goroutines.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>  <span class="k">go</span> <span class="nx">client</span><span class="p">.</span><span class="nf">writePump</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="k">go</span> <span class="nx">client</span><span class="p">.</span><span class="nf">readPump</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>資料流向的重點是 <code>client.hub.register &lt;- client</code>。</p>
+<p>並且參考官網</p>
+<blockquote>
+<p>Channels are a typed conduit through which you can send and receive values with the channel operator, &lt;-.</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">ch</span> <span class="o">&lt;-</span> <span class="nx">v</span>    <span class="c1">// Send v to channel ch.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nx">v</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">ch</span>  <span class="c1">// Receive from ch, and
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="c1">// assign value to v.
+</span></span></span></code></pre></div><p>從 <code>hub.go</code> 裡面可以知道 <code>Hub</code> 中的 <code>register</code> 是 <code>Channel</code> type，因此這邊可以理解是 <code>client</code> 這筆 data 被傳送進了 <code>client.hub.register</code> 這個 <code>Channel</code>。</p>
+<h3 id="hubgo">hub.go</h3>
+<p>目前傳進 Channel 的 data 還沒有人接住，所以我們來到 hub.go 找到下段程式碼</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// Method/Function Receiver: &#39;method&#39; in golang is a &#39;function&#39; with &#39;receiver&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1">// declare method &#39;run()&#39; bind to &#39;*Hub&#39; by receiver &#39;(h *Hub)&#39;
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">h</span> <span class="o">*</span><span class="nx">Hub</span><span class="p">)</span> <span class="nf">run</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">select</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// receive message from h.register(channel type)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">case</span> <span class="nx">client</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">h</span><span class="p">.</span><span class="nx">register</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// update h.clients(add new client)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="nx">h</span><span class="p">.</span><span class="nx">clients</span><span class="p">[</span><span class="nx">client</span><span class="p">]</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// client receive message from h.unregister(channel type)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">case</span> <span class="nx">client</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">h</span><span class="p">.</span><span class="nx">unregister</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ok</span> <span class="o">:=</span> <span class="nx">h</span><span class="p">.</span><span class="nx">clients</span><span class="p">[</span><span class="nx">client</span><span class="p">];</span> <span class="nx">ok</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">delete</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">clients</span><span class="p">,</span> <span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="nb">close</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// message from h.broadcast(channel type)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">case</span> <span class="nx">message</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">h</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// here the example sends message to all the clients who has already registered
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>      <span class="k">for</span> <span class="nx">client</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">h</span><span class="p">.</span><span class="nx">clients</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">select</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="c1">// put message data in to client.send channel
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">case</span> <span class="nx">client</span><span class="p">.</span><span class="nx">send</span> <span class="o">&lt;-</span> <span class="nx">message</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">close</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">delete</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">clients</span><span class="p">,</span> <span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>注意到 <code>case client := &lt;-h.register:</code> 其實就是將 <code>register</code> 這個 <code>Channel</code> 拿到的資料存進這裡的 <code>client</code> 變數中，然後再透過 <code>h.clients[client] = true</code> 來把 <code>client</code> 註冊進一開始在 <code>main.go</code> 中呼叫的 <code>newHub()</code> 這個 goroutine 的 <code>clients</code> 中，以此做到紀錄所有線上的 Clients。</p>
+<p>如果到這邊有卡住的話可以參考上面的:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">v</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">ch</span>  <span class="c1">// Receive from ch, and
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>           <span class="c1">// assign value to v.
+</span></span></span></code></pre></div><p>至此算是順利走完一趟有關 Channel 的 data flow 了。</p>
+<h3 id="readpump">readPump</h3>
+<p>接下來可以延續上面，看到 <code>client.go</code> 的最後兩行，發現 <code>writePump</code> 及 <code>readPump</code> 都各自有一個 goroutine 在處理。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">go</span> <span class="nx">client</span><span class="p">.</span><span class="nf">writePump</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="k">go</span> <span class="nx">client</span><span class="p">.</span><span class="nf">readPump</span><span class="p">()</span>
+</span></span></code></pre></div><p>首先看接收訊息的 <code>readPump</code> ，可以發現他在對資料做了一頓 Set 之後，最後一行執行了 <code>c.hub.broadcast &lt;- message</code>，這邊同上面邏輯，可以理解是將 <code>message</code> 這個 data 送進 <code>c.hub.broadcast</code> 這個 <code>Channel</code> 中。</p>
+<p>再看到 <code>hub.go</code> 中的 <code>run</code> function，<code>case message := &lt;-h.broadcast:</code> 就寫出了當 <code>h.broadcast</code> 接收到資料時所需要做的事情，這邊發現他是將收到的資料傳送給上面記錄的 <code>clients</code> 裡的所有 client。</p>
+<h2 id="private-message">private message</h2>
+<h3 id="第一步紀錄訊息資料">第一步，紀錄訊息資料</h3>
+<p>藉由上述我們可以知道派發訊息的 feature 是透過 <code>readPump</code> &amp; <code>case message := &lt;-h.broadcast</code> 兩段程式碼來完成的，因此這邊可以將原本的 readPump 改寫為</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">func</span> <span class="p">(</span><span class="nx">c</span> <span class="o">*</span><span class="nx">Client</span><span class="p">)</span> <span class="nf">readPump</span><span class="p">(</span><span class="nx">from</span> <span class="kt">string</span><span class="p">,</span> <span class="nx">to</span> <span class="kt">string</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">defer</span> <span class="kd">func</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">c</span><span class="p">.</span><span class="nx">hub</span><span class="p">.</span><span class="nx">unregister</span> <span class="o">&lt;-</span> <span class="nx">c</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">Close</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}()</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">SetReadLimit</span><span class="p">(</span><span class="nx">maxMessageSize</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">SetReadDeadline</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Add</span><span class="p">(</span><span class="nx">pongWait</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">  <span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">SetPongHandler</span><span class="p">(</span><span class="kd">func</span><span class="p">(</span><span class="kt">string</span><span class="p">)</span> <span class="kt">error</span> <span class="p">{</span><span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">SetReadDeadline</span><span class="p">(</span><span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Add</span><span class="p">(</span><span class="nx">pongWait</span><span class="p">));</span> <span class="k">return</span> <span class="kc">nil</span> <span class="p">})</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">_</span><span class="p">,</span> <span class="nx">message</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">c</span><span class="p">.</span><span class="nx">conn</span><span class="p">.</span><span class="nf">ReadMessage</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">if</span> <span class="nx">websocket</span><span class="p">.</span><span class="nf">IsUnexpectedCloseError</span><span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">websocket</span><span class="p">.</span><span class="nx">CloseGoingAway</span><span class="p">,</span> <span class="nx">websocket</span><span class="p">.</span><span class="nx">CloseAbnormalClosure</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;error: %v&#34;</span><span class="p">,</span> <span class="nx">err</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">      <span class="k">break</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">message</span> <span class="p">=</span> <span class="nx">bytes</span><span class="p">.</span><span class="nf">TrimSpace</span><span class="p">(</span><span class="nx">bytes</span><span class="p">.</span><span class="nf">Replace</span><span class="p">(</span><span class="nx">message</span><span class="p">,</span> <span class="nx">newline</span><span class="p">,</span> <span class="nx">space</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// add message time
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">messageMap</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">message</span><span class="p">)),</span> <span class="o">&amp;</span><span class="nx">messageMap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">nowSec</span> <span class="o">:=</span> <span class="nx">time</span><span class="p">.</span><span class="nf">Now</span><span class="p">().</span><span class="nf">Unix</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">messageMap</span><span class="p">[</span><span class="s">&#34;time&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">strconv</span><span class="p">.</span><span class="nf">FormatInt</span><span class="p">(</span><span class="nx">nowSec</span><span class="o">*</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// add sender and receiver
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">messageMap</span><span class="p">[</span><span class="s">&#34;from&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">from</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">messageMap</span><span class="p">[</span><span class="s">&#34;to&#34;</span><span class="p">]</span> <span class="p">=</span> <span class="nx">to</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">newMessage</span><span class="p">,</span> <span class="nx">marshalErr</span> <span class="o">:=</span> <span class="nx">json</span><span class="p">.</span><span class="nf">Marshal</span><span class="p">(</span><span class="nx">messageMap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nx">marshalErr</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="nx">log</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;error: %v&#34;</span><span class="p">,</span> <span class="nx">marshalErr</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// send to hub(case message := &lt;-h.broadcast:)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">c</span><span class="p">.</span><span class="nx">hub</span><span class="p">.</span><span class="nx">broadcast</span> <span class="o">&lt;-</span> <span class="nx">newMessage</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>這邊給 <code>readPump</code> 增加了 <code>from</code> &amp; <code>to</code> 兩個參數來記住 message 是來自誰以及傳給誰，並且同時增加了 <code>time</code> field 來記錄伺服器傳送訊息的時間。</p>
+<h3 id="第二步連接-ws-時紀錄-sender--receiver">第二步，連接 ws 時紀錄 sender &amp; receiver</h3>
+<p>在呼叫 <code>readPump</code> 的 <code>serveWs</code> 中增加接收&quot;傳送訊息人( sender )&ldquo;以及&quot;接收訊息人( receiver )&ldquo;的程式碼，如下。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="nx">senderId</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nf">Query</span><span class="p">().</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;senderId&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">receiverId</span> <span class="o">:=</span> <span class="nx">r</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nf">Query</span><span class="p">().</span><span class="nf">Get</span><span class="p">(</span><span class="s">&#34;receiverId&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">Client</span><span class="p">{</span><span class="nx">hub</span><span class="p">:</span> <span class="nx">hub</span><span class="p">,</span> <span class="nx">conn</span><span class="p">:</span> <span class="nx">conn</span><span class="p">,</span> <span class="nx">send</span><span class="p">:</span> <span class="nb">make</span><span class="p">(</span><span class="kd">chan</span> <span class="p">[]</span><span class="kt">byte</span><span class="p">,</span> <span class="mi">256</span><span class="p">),</span> <span class="nx">senderId</span><span class="p">:</span> <span class="nx">senderId</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// ---------------
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">go</span> <span class="nx">client</span><span class="p">.</span><span class="nf">readPump</span><span class="p">(</span><span class="nx">senderId</span><span class="p">,</span> <span class="nx">messageReceiver</span><span class="p">)</span>
+</span></span></code></pre></div><p>由於上面在 <code>Client</code> type 中新增了 <code>senderId</code> 這個 field，因此宣告 <code>Client</code> structure 的地方也要改為</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Client</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">hub</span> <span class="o">*</span><span class="nx">Hub</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// The websocket connection.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">conn</span> <span class="o">*</span><span class="nx">websocket</span><span class="p">.</span><span class="nx">Conn</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// Buffered channel of outbound messages.
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">send</span> <span class="kd">chan</span> <span class="p">[]</span><span class="kt">byte</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="c1">// add senderId field
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">senderId</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="第三步只把訊息傳給指定的-sender--receiver">第三步，只把訊息傳給指定的 sender &amp; receiver</h3>
+<p>接著來到 <code>hub.go</code> 裡的 <code>case message := &lt;-h.broadcast:</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="k">case</span> <span class="nx">message</span> <span class="o">:=</span> <span class="o">&lt;-</span><span class="nx">h</span><span class="p">.</span><span class="nx">broadcast</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">  <span class="k">for</span> <span class="nx">client</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">h</span><span class="p">.</span><span class="nx">clients</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// this part looks weird, may need golang pro to improve
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">messageMap</span> <span class="kd">map</span><span class="p">[</span><span class="kt">string</span><span class="p">]</span><span class="kt">string</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">json</span><span class="p">.</span><span class="nf">Unmarshal</span><span class="p">([]</span><span class="nb">byte</span><span class="p">(</span><span class="nb">string</span><span class="p">(</span><span class="nx">message</span><span class="p">)),</span> <span class="o">&amp;</span><span class="nx">messageMap</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// find specific sender and receiver in clients map
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="k">if</span> <span class="nx">messageMap</span><span class="p">[</span><span class="s">&#34;to&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="nx">client</span><span class="p">.</span><span class="nx">senderId</span> <span class="o">||</span> <span class="nx">messageMap</span><span class="p">[</span><span class="s">&#34;from&#34;</span><span class="p">]</span> <span class="o">==</span> <span class="nx">client</span><span class="p">.</span><span class="nx">senderId</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="k">select</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="c1">// receive message from socket
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>        <span class="k">case</span> <span class="nx">client</span><span class="p">.</span><span class="nx">send</span> <span class="o">&lt;-</span> <span class="nx">message</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">default</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">close</span><span class="p">(</span><span class="nx">client</span><span class="p">.</span><span class="nx">send</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">          <span class="nb">delete</span><span class="p">(</span><span class="nx">h</span><span class="p">.</span><span class="nx">clients</span><span class="p">,</span> <span class="nx">client</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p>透過 <code>if</code> 的條件式，只讓 clients 中的 sender 跟 receiver 的 send channel 可以接收到 message。</p>
+<p>這樣就算完成私密訊息的功能了。</p>
+<h2 id="postman-測試">Postman 測試</h2>
+<p>打開 postman，在 workspace 的地方新增三個 Websocket Request</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/001.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/001.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/001.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/001.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/001.png"
+        title="postman ws" /></p>
+<p>然後分別在 server Url 的地方輸入</p>
+<ol>
+<li><code>localhost:8080/ws?senderId=1111&amp;receiverId=2222</code></li>
+<li><code>localhost:8080/ws?senderId=2222&amp;receiverId=1111</code></li>
+<li><code>localhost:8080/ws?senderId=3333&amp;receiverId=1111</code></li>
+</ol>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/002.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/002.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/002.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/002.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/002.png"
+        title="postman ws" /></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/003.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/003.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/003.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/003.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/003.png"
+        title="postman ws" /></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/004.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/004.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/004.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/004.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/004.png"
+        title="postman ws" /></p>
+<p>讓三個連線都 connect，接著就可以發現，我們接收到的訊息，永遠都只會是跟自己有關(是 sender or receiver)的了。</p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/005.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/005.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/005.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/005.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/005.png"
+        title="1111" /></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/006.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/006.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/006.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/006.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/006.png"
+        title="2222" /></p>
+<p><img
+        class="lazyload"
+        src="https://jacky0707.github.io/Fun-Song/svg/loading.min.svg"
+        data-src="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/007.png"
+        data-srcset="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/007.png, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/007.png 1.5x, https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/007.png 2x"
+        data-sizes="auto"
+        alt="https://fun-song-asset.s3.ap-northeast-1.amazonaws.com/20220203/007.png"
+        title="3333" /></p>
+<p>如此一來，就算成功驗證我們的私訊聊天後端系統了。</p>
+<h2 id="成果">成果</h2>
+<p><a href="https://github.com/jacky0707/golang-ws/commit/55abdc219f1568caf76ecdd25ecfd27befe6b2ce" target="_blank" rel="noopener noreffer ">程式碼</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2022-02-03</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://jacky0707.github.io/Fun-Song/posts/20220203/" data-title="Chat system with Golang" data-hashtags="Golang,WebSocket"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://jacky0707.github.io/Fun-Song/posts/20220203/" data-hashtag="Golang"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://jacky0707.github.io/Fun-Song/posts/20220203/" data-title="Chat system with Golang"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://jacky0707.github.io/Fun-Song/posts/20220203/" data-title="Chat system with Golang"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@7.3.0/icons/line.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://jacky0707.github.io/Fun-Song/posts/20220203/" data-title="Chat system with Golang"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/golang/">Golang</a>,&nbsp;<a href="https://jacky0707.github.io/Fun-Song/tags/websocket/">WebSocket</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="https://jacky0707.github.io/Fun-Song/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="https://jacky0707.github.io/Fun-Song/posts/20220124/" class="prev" rel="prev" title="Hugo 筆記"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Hugo 筆記</a>
+            <a href="https://jacky0707.github.io/Fun-Song/posts/20230218/" class="next" rel="next" title="蜜月旅行首部曲 - 福岡三天三夜 day 1 &amp; 2">蜜月旅行首部曲 - 福岡三天三夜 day 1 & 2<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.111.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2025</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://jacky0707.github.io/Fun-Song/" target="_blank"></a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.5.1/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="https://jacky0707.github.io/Fun-Song/js/theme.min.js"></script></body>
+</html>

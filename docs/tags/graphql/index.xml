@@ -1,0 +1,22 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>GraphQL - Tag - Fun Song</title>
+        <link>https://jacky0707.github.io/Fun-Song/tags/graphql/</link>
+        <description>GraphQL - Tag - Fun Song</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://jacky0707.github.io/Fun-Song/tags/graphql/" rel="self" type="application/rss+xml" /><item>
+    <title>NUXT 入門筆記</title>
+    <link>https://jacky0707.github.io/Fun-Song/posts/20200723/</link>
+    <pubDate>Thu, 23 Jul 2020 00:00:00 &#43;0000</pubDate>
+    <author>邱嵩傑</author>
+    <guid>https://jacky0707.github.io/Fun-Song/posts/20200723/</guid>
+    <description><![CDATA[緣起 7/2 時剛好講了一場 Nuxt 的 AppWorks School 線上分享會，準備了兩三天的內容，只用來線上分享一個小時太可惜了，一定要寫下來記錄一下才對。
+但 7/1 才進新公司， TypeScript、react、redux 和一堆沒用過的 library ，加上 8 月決定要搬家所以要來賣一些不想帶走的家具，實在是有點過忙。趁著這個月的分享會到來(剛好分享 react hook)，趕稿一下。
+Get Start 這次入門講座以完成一個小專案為目標，並由四個部分組成:
+Create project npx 安裝: npx create-nuxt-app &lt;project-name&gt;，安裝選項參考:
+官網安裝說明: Nuxt install
+Directory Structure: 會在接下來的段落一一說明。 安裝完的目錄參考:
+Vuetify (Optional): Vue 的 UI 框架，但與 Nuxt 沒有必需的相依關係。 To be continue &mdash; Directory Structure: Layout 不同的 page 可以有不同的頁面布局，Side bar 的有無，Key Visaul 的呈現等等。
+要建立一個新的 layout ，只需要在 layout 資料夾中，建立一個 .vue 檔案，並且在 &lt;template&gt; tag 裡面設計自己喜歡的樣板，最後只要注意記得放入 &lt;nuxt /&gt; 來預留空間給每個 page 的內容就完成了。]]></description>
+</item>
+</channel>
+</rss>
